@@ -1,2 +1,3 @@
-# dotnet-maui-samples
-.NET MAUI samples
+# .NET MAUI samples
+
+Basic .NET MAUI samples that demonstrate concepts.
