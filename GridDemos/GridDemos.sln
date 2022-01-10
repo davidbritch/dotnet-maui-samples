@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31611.283
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GridDemos", "GridDemos\GridDemos.csproj", "{B2F20A62-3D97-4D4F-B5F3-38B0D572D8AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2F20A62-3D97-4D4F-B5F3-38B0D572D8AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2F20A62-3D97-4D4F-B5F3-38B0D572D8AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2F20A62-3D97-4D4F-B5F3-38B0D572D8AD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B2F20A62-3D97-4D4F-B5F3-38B0D572D8AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2F20A62-3D97-4D4F-B5F3-38B0D572D8AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2F20A62-3D97-4D4F-B5F3-38B0D572D8AD}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
+	EndGlobalSection
+EndGlobal

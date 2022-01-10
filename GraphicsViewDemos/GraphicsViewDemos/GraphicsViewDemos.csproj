@@ -1,0 +1,166 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows')) and '$(MSBuildRuntimeType)' == 'Full'">$(TargetFrameworks);net6.0-windows10.0.19041</TargetFrameworks>
+		<OutputType>Exe</OutputType>
+		<RootNamespace>GraphicsViewDemos</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+
+		<!-- Display name -->
+		<ApplicationTitle>GraphicsViewDemos</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.companyname.GraphicsViewDemos</ApplicationId>
+
+		<!-- Versions -->
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<!-- Required for C# Hot Reload -->
+		<UseInterpreter Condition="'$(Configuration)' == 'Debug'">True</UseInterpreter>
+
+		<SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net6.0-ios'">14.2</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net6.0-maccatalyst'">14.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net6.0-android'">21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$(TargetFramework.Contains('-windows'))">10.0.17763.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$(TargetFramework.Contains('-windows'))">10.0.17763.0</TargetPlatformMinVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" Color="#512BD4" />
+
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4" />
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+	</ItemGroup>
+
+	<ItemGroup Condition="$(TargetFramework.Contains('-windows'))">
+		<!-- Required - WinUI does not yet have buildTransitive for everything -->
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0" />
+		<PackageReference Include="Microsoft.Graphics.Win2D" Version="1.0.0.30" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Remove="Resources\Images\dotnet_bot.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\Images\dotnet_bot.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\Images\dotnet_bot.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Views\ImagesPage.xaml.cs">
+	    <DependentUpon>ImagesPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\DrawShapesPage.xaml.cs">
+	    <DependentUpon>DrawShapesPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\SolidPaintPage.xaml.cs">
+	    <DependentUpon>SolidPaintPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\ImagePaintPage.xaml.cs">
+	    <DependentUpon>ImagePaintPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\PatternPaintPage.xaml.cs">
+	    <DependentUpon>PatternPaintPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\LinearGradientPaintPage.xaml.cs">
+	    <DependentUpon>LinearGradientPaintPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\RadialGradientPaintPage.xaml.cs">
+	    <DependentUpon>RadialGradientPaintPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\RotateTransformPage.xaml.cs">
+	    <DependentUpon>RotateTransformPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\TranslateTransformPage.xaml.cs">
+	    <DependentUpon>TranslateTransformPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\ScaleTransformPage.xaml.cs">
+	    <DependentUpon>ScaleTransformPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\AffineTransformPage.xaml.cs">
+	    <DependentUpon>AffineTransformPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\CombineTransformsPage.xaml.cs">
+	    <DependentUpon>CombineTransformsPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\NonZeroWindingModePage.xaml.cs">
+	    <DependentUpon>NonZeroWindingModePage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\EvenOddWindingModePage.xaml.cs">
+	    <DependentUpon>EvenOddWindingModePage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\BlendModesPage.xaml.cs">
+	    <DependentUpon>BlendModesPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\ImagesPage.xaml">
+	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\DrawShapesPage.xaml">
+	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\SolidPaintPage.xaml">
+	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ImagePaintPage.xaml">
+	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\PatternPaintPage.xaml">
+	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\LinearGradientPaintPage.xaml">
+	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\RadialGradientPaintPage.xaml">
+	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\RotateTransformPage.xaml">
+	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\TranslateTransformPage.xaml">
+	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ScaleTransformPage.xaml">
+	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\AffineTransformPage.xaml">
+	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\CombineTransformsPage.xaml">
+	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\NonZeroWindingModePage.xaml">
+	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\EvenOddWindingModePage.xaml">
+	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\BlendModesPage.xaml">
+	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+	<PropertyGroup Condition="$(TargetFramework.Contains('-windows'))">
+		<OutputType>WinExe</OutputType>
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+	</PropertyGroup>
+
+	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionGraphicsViewDemosHideInfoBar="True" /></VisualStudio></ProjectExtensions>
+	
+</Project>
