@@ -57,6 +57,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\XAML\BorderDemoPage.xaml.cs">
+	    <DependentUpon>BorderDemoPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\XAML\GraphicsViewDemoPage.xaml.cs">
 	    <DependentUpon>GraphicsViewDemoPage.xaml</DependentUpon>
 	  </Compile>
@@ -73,6 +76,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\XAML\ActivityIndicatorDemoPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\XAML\BorderDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\XAML\BoxViewDemoPage.xaml">

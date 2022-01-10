@@ -15,6 +15,10 @@
                           Detail="Show that the app is busy"
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type views:ActivityIndicatorDemoPage}" />
+                <TextCell Text="Border"
+                          Detail="Draw a border or background around a control"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type views:BorderDemoPage}" />
                 <TextCell Text="BoxView"
                           Detail="Display a colored rectangle"
                           Command="{Binding NavigateCommand}"
@@ -233,6 +237,10 @@
                           Detail="Show that the app is busy"
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type codeViews:ActivityIndicatorDemoPage}" />
+                <TextCell Text="Border"
+                          Detail="Draw a border or background around a control"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type codeViews:BorderDemoPage}" />
                 <TextCell Text="BoxView"
                           Detail="Display a colored rectangle"
                           Command="{Binding NavigateCommand}"
