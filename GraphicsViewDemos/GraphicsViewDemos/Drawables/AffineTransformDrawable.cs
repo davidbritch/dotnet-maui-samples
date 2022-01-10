@@ -1,5 +1,6 @@
 ﻿using Microsoft.Maui.Graphics;
 using System;
+using System.Numerics;
 
 namespace GraphicsViewDemos.Drawables
 {
@@ -19,8 +20,7 @@ namespace GraphicsViewDemos.Drawables
                     path.LineTo(point);
             }
 
-
-            AffineTransform transform = new AffineTransform(1.5f, 1, 0, 1, 150, 150);
+            Matrix3x2 transform = new Matrix3x2(1.5f, 1, 0, 1, 150, 150);
             canvas.ConcatenateTransform(transform);
             canvas.FillColor = Colors.Red;
             canvas.FillPath(path);
