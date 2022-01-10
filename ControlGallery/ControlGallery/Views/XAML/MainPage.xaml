@@ -15,6 +15,10 @@
                           Detail="Show that the app is busy"
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type views:ActivityIndicatorDemoPage}" />
+                <TextCell Text="BlazorWebView"
+                          Detail="Host a Blazor web app in your app"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type views:BlazorWebViewDemoPage}" />
                 <TextCell Text="Border"
                           Detail="Draw a border or background around a control"
                           Command="{Binding NavigateCommand}"
@@ -237,6 +241,10 @@
                           Detail="Show that the app is busy"
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type codeViews:ActivityIndicatorDemoPage}" />
+                <TextCell Text="BlazorWebView"
+                          Detail="Host a Blazor web app in your app"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type codeViews:BlazorWebViewDemoPage}" />
                 <TextCell Text="Border"
                           Detail="Draw a border or background around a control"
                           Command="{Binding NavigateCommand}"
