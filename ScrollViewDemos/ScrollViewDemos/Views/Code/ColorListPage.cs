@@ -23,13 +23,10 @@
 
                 StackLayout horizontalStackLayout = new StackLayout
                 {
-                    Orientation = StackOrientation.Horizontal,
-                    Children =
-                    {
-                        boxView,
-                        label
-                    }
+                    Orientation = StackOrientation.Horizontal
                 };
+                horizontalStackLayout.Add(boxView);
+                horizontalStackLayout.Add(label);
 
                 return horizontalStackLayout;
             });
