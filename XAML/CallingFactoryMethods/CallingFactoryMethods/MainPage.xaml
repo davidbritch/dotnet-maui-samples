@@ -1,0 +1,49 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CallingFactoryMethods.MainPage">
+	<StackLayout Margin="20"
+				 Spacing="6">
+		<Label Text="Calling Factory Methods from XAML" 
+			   FontAttributes="Bold" 
+			   HorizontalOptions="Center" />
+		<BoxView HeightRequest="150" 
+				 WidthRequest="150" 
+				 HorizontalOptions="Center">
+			<BoxView.Color>
+				<Color x:FactoryMethod="FromRgba">
+					<x:Arguments>
+						<x:Byte>192</x:Byte>
+						<x:Byte>75</x:Byte>
+						<x:Byte>150</x:Byte>
+						<x:Byte>128</x:Byte>
+					</x:Arguments>
+				</Color>
+			</BoxView.Color>
+		</BoxView>
+		<BoxView HeightRequest="150" 
+				 WidthRequest="150" 
+				 HorizontalOptions="Center">
+			<BoxView.Color>
+				<Color x:FactoryMethod="FromHsla">
+					<x:Arguments>
+						<x:Double>0.23</x:Double>
+						<x:Double>0.42</x:Double>
+						<x:Double>0.69</x:Double>
+						<x:Double>0.7</x:Double>
+					</x:Arguments>
+				</Color>
+			</BoxView.Color>
+		</BoxView>
+		<BoxView HeightRequest="150" 
+				 WidthRequest="150" 
+				 HorizontalOptions="Center">
+			<BoxView.Color>
+				<Color x:FactoryMethod="FromHex">
+					<x:Arguments>
+						<x:String>#FF048B9A</x:String>
+					</x:Arguments>
+				</Color>
+			</BoxView.Color>
+		</BoxView>
+	</StackLayout>
+</ContentPage>

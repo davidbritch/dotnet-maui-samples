@@ -1,0 +1,10 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoadRuntimeXAML.MainPage">
+	<StackLayout x:Name="stackLayout"
+                 Margin="20,35,20,20"
+				 Spacing="6">
+		<Button Text="Load XAML"
+                Clicked="OnLoadButtonClicked" />
+	</StackLayout>
+</ContentPage>

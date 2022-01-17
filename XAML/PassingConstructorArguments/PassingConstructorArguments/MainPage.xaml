@@ -1,0 +1,48 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PassingConstructorArguments.MainPage">
+    <StackLayout Margin="20"
+                 Spacing="6">
+        <Label Text="Passing Constructor Arguments in XAML" 
+               FontAttributes="Bold" 
+               HorizontalOptions="Center" />
+        <BoxView HeightRequest="150" 
+                 WidthRequest="150" 
+                 HorizontalOptions="Center">
+            <BoxView.Color>
+                <Color>
+                    <x:Arguments>
+                        <x:Single>0.9</x:Single>
+                    </x:Arguments>
+                </Color>
+            </BoxView.Color>
+        </BoxView>
+        <BoxView HeightRequest="150" 
+                 WidthRequest="150" 
+                 HorizontalOptions="Center">
+            <BoxView.Color>
+                <Color>
+                    <x:Arguments>
+                        <x:Single>0.25</x:Single>
+                        <x:Single>0.5</x:Single>
+                        <x:Single>0.75</x:Single>
+                    </x:Arguments>
+                </Color>
+            </BoxView.Color>
+        </BoxView>
+        <BoxView HeightRequest="150"
+                 WidthRequest="150" 
+                 HorizontalOptions="Center">
+            <BoxView.Color>
+                <Color>
+                    <x:Arguments>
+                        <x:Single>0.8</x:Single>
+                        <x:Single>0.5</x:Single>
+                        <x:Single>0.2</x:Single>
+                        <x:Single>0.5</x:Single>
+                    </x:Arguments>
+                </Color>
+            </BoxView.Color>
+        </BoxView>
+    </StackLayout>
+</ContentPage>
