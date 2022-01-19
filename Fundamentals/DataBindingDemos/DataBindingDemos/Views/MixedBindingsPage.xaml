@@ -3,23 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:DataBindingDemos"             
              x:Class="DataBindingDemos.MixedBindingsPage"
+             x:DataType="local:HslColorViewModel"
              Title="Mixed Color Selector">
+    <ContentPage.BindingContext>
+        <local:HslColorViewModel Color="Sienna" />
+    </ContentPage.BindingContext>
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Slider">
-                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="Center" />
             </Style>
             <Style TargetType="Label">
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    <StackLayout x:DataType="local:HslColorViewModel">
-        <StackLayout.BindingContext>
-            <local:HslColorViewModel Color="Sienna" />
-        </StackLayout.BindingContext>
+    <StackLayout Margin="20">
         <BoxView Color="{Binding Color}"
-                 VerticalOptions="FillAndExpand" />
+                 HeightRequest="100"
+                 WidthRequest="100"
+                 HorizontalOptions="Center" />
         <StackLayout x:DataType="{x:Null}"
                      Margin="10, 0">
             <Label Text="{Binding Name}" />
