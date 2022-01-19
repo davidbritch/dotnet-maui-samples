@@ -6,15 +6,13 @@
              Title="Path Variations"
              x:Name="page">
     <ContentPage.Resources>
-        <ResourceDictionary>
-            <Style TargetType="Label">
-                <Setter Property="FontSize" Value="24" />
-                <Setter Property="HorizontalTextAlignment" Value="Center" />
-                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
-            </Style>
-        </ResourceDictionary>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
     </ContentPage.Resources>
-    
+
     <StackLayout Margin="10, 0">
         <Label Text="Select a time:" />
 
@@ -27,7 +25,7 @@
         <Label Text="{Binding Source={x:Reference page},
                               Path=Content.Children.Count,
                               StringFormat='There are {0} children in this StackLayout'}" />
-        
+
         <Label Text="{Binding Source={x:Static globe:CultureInfo.CurrentCulture},
                               Path=DateTimeFormat.DayNames[3],
                               StringFormat='The middle day of the week is {0}'}" />

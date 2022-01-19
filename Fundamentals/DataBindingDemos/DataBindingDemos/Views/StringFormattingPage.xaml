@@ -4,27 +4,25 @@
              xmlns:sys="clr-namespace:System;assembly=netstandard"
              x:Class="DataBindingDemos.StringFormattingPage"
              Title="String Formatting">
-    
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Style TargetType="Label">
-                <Setter Property="HorizontalTextAlignment" Value="Center" />
-            </Style>
 
-            <Style TargetType="BoxView">
-                <Setter Property="Color" Value="Blue" />
-                <Setter Property="HeightRequest" Value="2" />
-                <Setter Property="Margin" Value="0, 5" />
-            </Style>
-        </ResourceDictionary>
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+        </Style>
+
+        <Style TargetType="BoxView">
+            <Setter Property="Color" Value="Blue" />
+            <Setter Property="HeightRequest" Value="2" />
+            <Setter Property="Margin" Value="0, 5" />
+        </Style>
     </ContentPage.Resources>
-    
+
     <StackLayout Margin="10">
         <Slider x:Name="slider" />
         <Label Text="{Binding Source={x:Reference slider},
                               Path=Value,
                               StringFormat='The slider value is {0:F2}'}" />
-        
+
         <BoxView />
 
         <TimePicker x:Name="timePicker" />

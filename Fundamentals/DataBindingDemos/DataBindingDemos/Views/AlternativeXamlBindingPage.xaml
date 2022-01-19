@@ -7,13 +7,13 @@
         <Label Text="TEXT"
                FontSize="40"
                HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand"
+               VerticalOptions="Center"
                Scale="{Binding Source={x:Reference slider},
                                Path=Value}" />
 
         <Slider x:Name="slider"
                 Minimum="-2"
                 Maximum="2"
-                VerticalOptions="CenterAndExpand" />
+                VerticalOptions="Center" />
     </StackLayout>
 </ContentPage>

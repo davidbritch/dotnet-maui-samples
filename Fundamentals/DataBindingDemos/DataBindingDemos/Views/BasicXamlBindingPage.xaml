@@ -7,12 +7,12 @@
         <Label Text="TEXT"
                FontSize="80"
                HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand"
+               VerticalOptions="Center"
                BindingContext="{x:Reference Name=slider}"
                Rotation="{Binding Path=Value}" />
 
         <Slider x:Name="slider"
                 Maximum="360"
-                VerticalOptions="CenterAndExpand" />
+                VerticalOptions="Center" />
     </StackLayout>
 </ContentPage>

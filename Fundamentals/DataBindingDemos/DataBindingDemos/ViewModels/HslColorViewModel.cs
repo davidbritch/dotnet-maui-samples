@@ -5,7 +5,10 @@ namespace DataBindingDemos
     public class HslColorViewModel : INotifyPropertyChanged
     {
         Color color;
-        string name; 
+        string name;
+        float hue;
+        float saturation;
+        float luminosity;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -13,14 +16,14 @@ namespace DataBindingDemos
         {
             set
             {
-                if (color.GetHue() != value)
+                if (hue != value)
                 {
-                    Color = Color.FromHsla(value, color.GetSaturation(), color.GetLuminosity());
+                    Color = Color.FromHsla(value, saturation, luminosity);
                 }
             }
             get 
             {
-                return color.GetHue();
+                return hue;
             }
         }
 
@@ -28,14 +31,14 @@ namespace DataBindingDemos
         {
             set
             {
-                if (color.GetSaturation() != value)
+                if (saturation != value)
                 {
-                    Color = Color.FromHsla(color.GetHue(), value, color.GetLuminosity());
+                    Color = Color.FromHsla(hue, value, luminosity);
                 }
             }
             get
             {
-                return color.GetSaturation();
+                return saturation;
             }
         }
 
@@ -43,14 +46,14 @@ namespace DataBindingDemos
         {
             set
             {
-                if (color.GetLuminosity() != value)
+                if (luminosity != value)
                 {
-                    Color = Color.FromHsla(color.GetHue(), color.GetSaturation(), value);
+                    Color = Color.FromHsla(hue, saturation, value);
                 }
             }
             get
             {
-                return color.GetLuminosity();
+                return luminosity;
             }
         }
 
@@ -61,6 +64,9 @@ namespace DataBindingDemos
                 if (color != value)
                 {
                     color = value;
+                    hue = color.GetHue();
+                    saturation = color.GetSaturation();
+                    luminosity = color.GetLuminosity();
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Hue"));
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Saturation"));
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Luminosity"));

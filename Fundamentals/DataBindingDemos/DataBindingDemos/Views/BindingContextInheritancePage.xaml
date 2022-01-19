@@ -5,20 +5,20 @@
              Title="BindingContext Inheritance">
     <StackLayout Padding="10">
 
-        <StackLayout VerticalOptions="FillAndExpand"
+        <StackLayout VerticalOptions="Fill"
                      BindingContext="{x:Reference slider}">
 
             <Label Text="TEXT"
                    FontSize="80"
                    HorizontalOptions="Center"
-                   VerticalOptions="EndAndExpand"
+                   VerticalOptions="End"
                    Rotation="{Binding Value}" />
 
             <BoxView Color="#800000FF"
                      WidthRequest="180"
                      HeightRequest="40"
                      HorizontalOptions="Center"
-                     VerticalOptions="StartAndExpand"
+                     VerticalOptions="Start"
                      Rotation="{Binding Value}" />
         </StackLayout>
 

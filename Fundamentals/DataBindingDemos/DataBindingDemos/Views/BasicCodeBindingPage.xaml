@@ -8,10 +8,10 @@
                Text="TEXT"
                FontSize="80"
                HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand" />
+               VerticalOptions="Center" />
 
         <Slider x:Name="slider"
                 Maximum="360"
-                VerticalOptions="CenterAndExpand" />
+                VerticalOptions="Center" />
     </StackLayout>
 </ContentPage>

@@ -4,11 +4,14 @@
              xmlns:local="clr-namespace:DataBindingDemos"
              x:Class="DataBindingDemos.BetterColorSelectorPage"
              Title="Better Color Selector">
+    <ContentPage.BindingContext>
+        <local:HslColorViewModel Color="Sienna" />
+    </ContentPage.BindingContext>
 
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Slider">
-                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="Center" />
             </Style>
 
             <Style TargetType="Label">
@@ -16,24 +19,18 @@
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-        
-    <StackLayout>
-        <StackLayout.BindingContext>
-            <local:HslColorViewModel Color="Sienna" />
-        </StackLayout.BindingContext>
 
+    <StackLayout Margin="20">
         <BoxView Color="{Binding Color}"
-                 VerticalOptions="FillAndExpand" />
-
+                 HeightRequest="100"
+                 WidthRequest="100"
+                 HorizontalOptions="Center" />
         <StackLayout Margin="10, 0">
             <Label Text="{Binding Name}" />
-
             <Slider Value="{Binding Hue}" />
             <Label Text="{Binding Hue, StringFormat='Hue = {0:F2}'}" />
-
             <Slider Value="{Binding Saturation}" />
             <Label Text="{Binding Saturation, StringFormat='Saturation = {0:F2}'}" />
-
             <Slider Value="{Binding Luminosity}" />
             <Label Text="{Binding Luminosity, StringFormat='Luminosity = {0:F2}'}" />
         </StackLayout>
