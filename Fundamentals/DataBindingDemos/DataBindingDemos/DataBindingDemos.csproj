@@ -50,6 +50,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\collapse.png" />
+	  <None Remove="Resources\Images\expand.png" />
 	  <None Remove="Resources\Images\user.png" />
 	</ItemGroup>
 

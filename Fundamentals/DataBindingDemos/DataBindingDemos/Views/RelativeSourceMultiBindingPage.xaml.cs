@@ -6,5 +6,11 @@
         {
             InitializeComponent();
         }
+
+        void OnTapGestureRecognized(object sender, EventArgs e)
+        {
+            ExpanderGrid expanderGrid = sender as ExpanderGrid;
+            expanderGrid.IsExpanded = !expanderGrid.IsExpanded;
+        }
     }
 }
