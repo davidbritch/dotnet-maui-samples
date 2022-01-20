@@ -4,11 +4,10 @@
              xmlns:local="clr-namespace:DataBindingDemos"
              x:Class="DataBindingDemos.PersonEntryPage"
              Title="Person Entry">
+    <ContentPage.BindingContext>
+        <local:PersonCollectionViewModel />
+    </ContentPage.BindingContext>
     <Grid Margin="10">
-        <Grid.BindingContext>
-            <local:PersonCollectionViewModel />
-        </Grid.BindingContext>
-        
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -25,14 +24,12 @@
         <!-- Entry Form -->
         <Grid Grid.Row="1"
               IsEnabled="{Binding IsEditing}">
-            
             <Grid BindingContext="{Binding PersonEdit}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
@@ -41,7 +38,6 @@
                 <Label Text="Name: " Grid.Row="0" Grid.Column="0" />
                 <Entry Text="{Binding Name}" 
                        Grid.Row="0" Grid.Column="1" />
-
                 <Label Text="Age: " Grid.Row="1" Grid.Column="0" />
                 <StackLayout Orientation="Horizontal" 
                              Grid.Row="1" Grid.Column="1">
@@ -50,11 +46,9 @@
                     <Label Text="{Binding Age, StringFormat='{0} years old'}"
                            VerticalOptions="Center" />
                 </StackLayout>
-
                 <Label Text="Skills: " Grid.Row="2" Grid.Column="0" />
                 <Entry Text="{Binding Skills}"
                        Grid.Row="2" Grid.Column="1" />
-
             </Grid>
         </Grid>
 
@@ -68,12 +62,11 @@
             <Button Text="Submit"
                     Grid.Column="0"
                     Command="{Binding SubmitCommand}"
-                    VerticalOptions="CenterAndExpand" />
-
+                    VerticalOptions="Center" />
             <Button Text="Cancel"
                     Grid.Column="1"
                     Command="{Binding CancelCommand}"
-                    VerticalOptions="CenterAndExpand" />
+                    VerticalOptions="Center" />
         </Grid>
 
         <!-- List of Persons -->

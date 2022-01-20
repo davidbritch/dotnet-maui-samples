@@ -6,8 +6,7 @@ namespace DataBindingDemos
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            int res = (int)Math.Round((float)value * GetParameter(parameter));
-            return res;
+            return (int)Math.Round((float)value * GetParameter(parameter));
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
