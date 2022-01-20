@@ -4,37 +4,29 @@
              xmlns:local="clr-namespace:DataBindingDemos"
              x:Class="DataBindingDemos.SimpleColorSelectorPage"
              Title="Simple Color Selector">
+    <ContentPage.BindingContext>
+        <local:HslColorViewModel Color="MediumTurquoise" />
+    </ContentPage.BindingContext>
 
     <ContentPage.Resources>
-        <ResourceDictionary>
-            <local:HslColorViewModel x:Key="viewModel" 
-                                     Color="MediumTurquoise" />
-
-            <Style TargetType="Slider">
-                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
-            </Style>
-        </ResourceDictionary>
+        <Style TargetType="Slider">
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
     </ContentPage.Resources>
         
-    <Grid BindingContext="{StaticResource viewModel}">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-
         <BoxView Color="{Binding Color}"
                  Grid.Row="0" />
-
         <StackLayout Grid.Row="1"
                      Margin="10, 0">
-
             <Label Text="{Binding Name}"
                    HorizontalTextAlignment="Center" />
-
-            <Slider Value="{Binding Hue}" />
-    
+            <Slider Value="{Binding Hue}" />    
             <Slider Value="{Binding Saturation}" />
-
             <Slider Value="{Binding Luminosity}" />
         </StackLayout>
     </Grid>

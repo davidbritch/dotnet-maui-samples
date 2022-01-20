@@ -37,10 +37,6 @@
                           Detail="Use a ViewModel for HSL Color"
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type local:SimpleColorSelectorPage}" />
-                <TextCell Text="Sample Settings"
-                          Detail="Create a ViewModel for Settings"
-                          Command="{Binding NavigateCommand}"
-                          CommandParameter="{x:Type local:SampleSettingsPage}" />
             </TableSection>
             <TableSection Title="String Formatting">
                 <TextCell Text="String Formatting"

@@ -2,11 +2,12 @@ using System.Globalization;
 
 namespace DataBindingDemos
 {
-    public class DoubleToIntConverter : IValueConverter
+    public class FloatToIntConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return (int)Math.Round((double)value * GetParameter(parameter));
+            int res = (int)Math.Round((float)value * GetParameter(parameter));
+            return res;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
@@ -16,14 +17,14 @@ namespace DataBindingDemos
 
         double GetParameter(object parameter)
         {
-            if (parameter is double)
-                return (double)parameter;
+            if (parameter is float)
+                return (float)parameter;
 
             else if (parameter is int)
                 return (int)parameter;
 
             else if (parameter is string)
-                return double.Parse((string)parameter);
+                return float.Parse((string)parameter);
 
             return 1;
         }

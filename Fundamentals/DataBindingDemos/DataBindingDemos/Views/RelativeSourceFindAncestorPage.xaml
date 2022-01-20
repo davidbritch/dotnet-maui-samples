@@ -24,7 +24,7 @@
                             <Button Text="Delete"
                                     Command="{Binding Source={RelativeSource AncestorType={x:Type local:PeopleViewModel}}, Path=DeleteEmployeeCommand}"
                                     CommandParameter="{Binding}"
-                                    HorizontalOptions="EndAndExpand" />
+                                    HorizontalOptions="End" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

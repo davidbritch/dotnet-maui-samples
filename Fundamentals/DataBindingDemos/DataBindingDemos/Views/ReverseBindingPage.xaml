@@ -9,10 +9,10 @@
                Text="TEXT"
                FontSize="80"
                HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand" />
+               VerticalOptions="Center" />
 
         <Slider x:Name="slider"
-                VerticalOptions="CenterAndExpand"
+                VerticalOptions="Center"
                 Value="{Binding Source={x:Reference label},
                                 Path=Opacity}" />
     </StackLayout>

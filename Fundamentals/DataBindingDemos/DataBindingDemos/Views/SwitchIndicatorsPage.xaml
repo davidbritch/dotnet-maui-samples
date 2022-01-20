@@ -5,21 +5,19 @@
              x:Class="DataBindingDemos.SwitchIndicatorsPage"
              Title="Switch Indicators">
     <ContentPage.Resources>
-        <ResourceDictionary>
-            <Style TargetType="Label">
-                <Setter Property="FontSize" Value="18" />
-                <Setter Property="VerticalOptions" Value="Center" />
-            </Style>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
 
-            <Style TargetType="Switch">
-                <Setter Property="VerticalOptions" Value="Center" />
-            </Style>
-        </ResourceDictionary>
+        <Style TargetType="Switch">
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
     </ContentPage.Resources>
-    
+
     <StackLayout Padding="10, 0">
         <StackLayout Orientation="Horizontal"
-                     VerticalOptions="CenterAndExpand">
+                     VerticalOptions="Center">
             <Label Text="Subscribe?" />
             <Switch x:Name="switch1" />
             <Label>
@@ -37,7 +35,7 @@
         </StackLayout>
 
         <StackLayout Orientation="Horizontal"
-                     VerticalOptions="CenterAndExpand">
+                     VerticalOptions="Center">
             <Label Text="Allow popups?" />
             <Switch x:Name="switch2" />
             <Label>
@@ -65,7 +63,7 @@
         </StackLayout>
 
         <StackLayout Orientation="Horizontal"
-                     VerticalOptions="CenterAndExpand">
+                     VerticalOptions="Center">
             <Label Text="Learn more?" />
             <Switch x:Name="switch3" />
             <Label FontSize="18"
@@ -80,7 +78,7 @@
                                         <Setter Property="Text" Value="Indubitably!" />
                                         <Setter Property="FontAttributes" Value="Italic, Bold" />
                                         <Setter Property="TextColor" Value="Green" />
-                                    </Style>                                    
+                                    </Style>
                                 </local:BoolToObjectConverter.TrueObject>
 
                                 <local:BoolToObjectConverter.FalseObject>

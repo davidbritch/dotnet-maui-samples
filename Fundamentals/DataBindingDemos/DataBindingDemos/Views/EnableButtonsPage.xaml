@@ -5,32 +5,27 @@
              x:Class="DataBindingDemos.EnableButtonsPage"
              Title="Enable Buttons">
     <ContentPage.Resources>
-        <ResourceDictionary>
-            <local:IntToBoolConverter x:Key="intToBool" />
-        </ResourceDictionary>
+        <local:IntToBoolConverter x:Key="intToBool" />
     </ContentPage.Resources>
     
     <StackLayout Padding="10, 0">
         <Entry x:Name="entry1"
                Text=""
                Placeholder="enter search term"
-               VerticalOptions="CenterAndExpand" />
-
+               VerticalOptions="Center" />
         <Button Text="Search"
                 HorizontalOptions="Center"
-                VerticalOptions="CenterAndExpand"
+                VerticalOptions="Center"
                 IsEnabled="{Binding Source={x:Reference entry1},
                                     Path=Text.Length,
                                     Converter={StaticResource intToBool}}" />
-
         <Entry x:Name="entry2"
                Text=""
                Placeholder="enter destination"
-               VerticalOptions="CenterAndExpand" />
-
+               VerticalOptions="Center" />
         <Button Text="Submit"
                 HorizontalOptions="Center"
-                VerticalOptions="CenterAndExpand"
+                VerticalOptions="Center"
                 IsEnabled="{Binding Source={x:Reference entry2},
                                     Path=Text.Length,
                                     Converter={StaticResource intToBool}}" />

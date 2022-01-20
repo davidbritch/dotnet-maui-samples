@@ -11,6 +11,10 @@ namespace DataBindingDemos
 
         public float Red
         {
+            get
+            {
+                return color.Red;
+            }
             set
             {
                 if (color.Red != value)
@@ -18,14 +22,14 @@ namespace DataBindingDemos
                     Color = new Color(value, color.Green, color.Blue);
                 }
             }
-            get 
-            {
-                return color.Red;
-            }
         }
 
         public float Green
         {
+            get
+            {
+                return color.Green;
+            }
             set
             {
                 if (color.Green != value)
@@ -33,14 +37,14 @@ namespace DataBindingDemos
                     Color = new Color(color.Red, value, color.Blue);
                 }
             }
-            get
-            {
-                return color.Green;
-            }
         }
 
         public float Blue
         {
+            get
+            {
+                return color.Blue;
+            }
             set
             {
                 if (color.Blue != value)
@@ -48,14 +52,14 @@ namespace DataBindingDemos
                     Color = new Color(color.Red, color.Green, value);
                 }
             }
-            get
-            {
-                return color.Blue;
-            }
         }
 
         public Color Color
         {
+            get
+            {
+                return color;
+            }
             set
             {
                 if (color != value)
@@ -69,14 +73,14 @@ namespace DataBindingDemos
                     Name = NamedColor.GetNearestColorName(color);
                 }
             }
-            get
-            {
-                return color;
-            }
         }
 
         public string Name
         {
+            get
+            {
+                return name;
+            }
             private set
             {
                 if (name != value)
@@ -84,10 +88,6 @@ namespace DataBindingDemos
                     name = value;
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Name"));
                 }
-            }
-            get
-            {
-                return name;
             }
         }
     }
