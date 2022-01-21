@@ -9,20 +9,20 @@
         <local:AllTrueMultiConverter x:Key="AllTrueConverter" />
 
         <ControlTemplate x:Key="CardViewExpanderControlTemplate">
-            <local:ExpanderGrid BindingContext="{Binding Source={RelativeSource TemplatedParent}}"
-                                IsExpanded="{Binding IsExpanded, Source={RelativeSource TemplatedParent}}"
-                                BackgroundColor="{Binding CardColor}"
-                                RowDefinitions="Auto,Auto"
-                                Padding="8">
-                <local:ExpanderGrid.GestureRecognizers>
+            <local:Expander BindingContext="{Binding Source={RelativeSource TemplatedParent}}"
+                            IsExpanded="{Binding IsExpanded, Source={RelativeSource TemplatedParent}}"
+                            BackgroundColor="{Binding CardColor}"
+                            RowDefinitions="Auto,Auto"
+                            Padding="8">
+                <local:Expander.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnTapGestureRecognized" />
-                </local:ExpanderGrid.GestureRecognizers>
-                <local:ExpanderGrid.IsVisible>
+                </local:Expander.GestureRecognizers>
+                <local:Expander.IsVisible>
                     <MultiBinding Converter="{StaticResource AllTrueConverter}">
                         <Binding Path="IsExpanded" />
                         <Binding Path="IsEnabled" />
                     </MultiBinding>
-                </local:ExpanderGrid.IsVisible>
+                </local:Expander.IsVisible>
                 <Grid>
                     <Label Text="{Binding CardTitle}"
                            FontAttributes="Bold"
@@ -34,7 +34,7 @@
                            VerticalOptions="Start">
                         <Image.Triggers>
                             <DataTrigger TargetType="Image"
-                                         Binding="{Binding Source={RelativeSource AncestorType={x:Type local:ExpanderGrid}}, Path=IsExpanded}"
+                                         Binding="{Binding Source={RelativeSource AncestorType={x:Type local:Expander}}, Path=IsExpanded}"
                                          Value="True">
                                 <Setter Property="Source"
                                         Value="collapse.png" />
@@ -71,7 +71,7 @@
                            Text="{Binding CardDescription}"
                            HorizontalOptions="Start" />
                 </Grid>
-            </local:ExpanderGrid>
+            </local:Expander>
         </ControlTemplate>
 
     </ContentPage.Resources>
