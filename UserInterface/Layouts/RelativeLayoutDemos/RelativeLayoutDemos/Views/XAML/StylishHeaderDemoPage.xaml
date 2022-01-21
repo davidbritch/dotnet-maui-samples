@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:compat="clr-namespace:Microsoft.Maui.Controls.Compatibility;assembly=Microsoft.Maui.Controls"
+             x:Class="RelativeLayoutDemos.Views.XAML.StylishHeaderDemoPage"
+             Title="Stylish header demo">
+    <compat:RelativeLayout Margin="20">
+        <BoxView Color="Silver"
+                 compat:RelativeLayout.XConstraint="0"
+                 compat:RelativeLayout.YConstraint="10"
+                 compat:RelativeLayout.WidthConstraint="200"
+                 compat:RelativeLayout.HeightConstraint="5" />
+        <BoxView Color="Silver"
+                 compat:RelativeLayout.XConstraint="0"
+                 compat:RelativeLayout.YConstraint="20"
+                 compat:RelativeLayout.WidthConstraint="200"
+                 compat:RelativeLayout.HeightConstraint="5" />
+        <BoxView Color="Silver"
+                 compat:RelativeLayout.XConstraint="10"
+                 compat:RelativeLayout.YConstraint="0"
+                 compat:RelativeLayout.WidthConstraint="5"
+                 compat:RelativeLayout.HeightConstraint="65" />
+        <BoxView Color="Silver"
+                 compat:RelativeLayout.XConstraint="20"
+                 compat:RelativeLayout.YConstraint="0"
+                 compat:RelativeLayout.WidthConstraint="5"
+                 compat:RelativeLayout.HeightConstraint="65" />
+        <Label Text="Stylish header"
+               FontSize="24"
+               compat:RelativeLayout.XConstraint="30"
+               compat:RelativeLayout.YConstraint="25" />
+        <Label compat:RelativeLayout.XConstraint="0"
+               compat:RelativeLayout.YConstraint="80">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Although " />
+                    <Span Text="RelativeLayout"
+                          FontAttributes="Italic" />
+                    <Span Text=" is usually employed for purposes other than the display of text using a " />
+                    <Span Text="Label"
+                          FontAttributes="Italic" />
+                    <Span Text=", obviously it can be used in that way. The text continues to wrap nicely within the bounds of the container and any margin that might be applied." />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+    </compat:RelativeLayout>
+</ContentPage>
