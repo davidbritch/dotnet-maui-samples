@@ -19,35 +19,28 @@
                Grid.Row="0" Grid.Column="0"
                TextColor="White"
                BackgroundColor="Blue" />
-
-        <BoxView Color="Silver"
-                 HeightRequest="0"
+        <BoxView Color="Silver"         
                  Grid.Row="0" Grid.Column="1" />
-
         <BoxView Color="Teal"
                  Grid.Row="1" Grid.Column="0" />
-
         <Label Text="Leftover space"
                Grid.Row="1" Grid.Column="1"
                TextColor="Purple"
                BackgroundColor="Aqua"
                HorizontalTextAlignment="Center"
                VerticalTextAlignment="Center" />
-
         <Label Text="Span two rows (or more if you want)"
                Grid.Row="0" Grid.Column="2" Grid.RowSpan="2"
                TextColor="Yellow"
                BackgroundColor="Blue"
                HorizontalTextAlignment="Center"
                VerticalTextAlignment="Center" />
-
         <Label Text="Span two columns"
                Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
                TextColor="Blue"
                BackgroundColor="Yellow"
                HorizontalTextAlignment="Center"
                VerticalTextAlignment="Center" />
-
         <Label Text="Fixed 100x100"
                Grid.Row="2" Grid.Column="2"
                TextColor="Aqua"
