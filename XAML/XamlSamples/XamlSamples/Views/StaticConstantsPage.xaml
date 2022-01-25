@@ -5,15 +5,13 @@
              x:Class="XamlSamples.StaticConstantsPage"
              Title="Static Constants Page"
              Padding="5,25,5,0">
-
     <StackLayout>
         <Label Text="Hello, XAML!"
                TextColor="Aqua"
                BackgroundColor="Brown"
                FontAttributes="Bold"
-               FontSize="{OnPlatform 50, Android=40, iOS=35}"
+               FontSize="30"
                HorizontalOptions="Center" />
-
         <BoxView WidthRequest="{x:Static sys:Math.PI}"
                  HeightRequest="{x:Static sys:Math.E}"
                  Color="Aqua"

@@ -5,11 +5,6 @@ namespace XamlSamples
 {
     public class NamedColor
     {
-        // Instance members.
-        private NamedColor()
-        {
-        }
-
         public string Name { private set; get; }
 
         public string FriendlyName { private set; get; }
@@ -23,7 +18,7 @@ namespace XamlSamples
             StringBuilder stringBuilder = new StringBuilder();
 
             // Loop through the public static fields of the Color structure.
-            foreach (FieldInfo fieldInfo in typeof (Color).GetRuntimeFields ())
+            foreach (FieldInfo fieldInfo in typeof (Colors).GetRuntimeFields ())
             {
                 if (fieldInfo.IsPublic && 
                     fieldInfo.IsStatic &&

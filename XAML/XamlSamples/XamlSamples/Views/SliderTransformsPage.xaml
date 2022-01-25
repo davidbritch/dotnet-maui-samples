@@ -12,7 +12,6 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="Auto" />
@@ -32,7 +31,6 @@
                 Maximum="10"
                 Value="{Binding Scale, Mode=TwoWay}" 
                 Margin="20,0,0,0" />
-
         <Label BindingContext="{x:Reference scaleSlider}"
                Text="{Binding Value, StringFormat='Scale = {0:F1}'}"
                Grid.Row="1" Grid.Column="1"
@@ -45,7 +43,6 @@
                 Maximum="360"
                 Value="{Binding Rotation, Mode=OneWayToSource}" 
                 Margin="20,0,0,0" />
-
         <Label BindingContext="{x:Reference rotationSlider}"
                Text="{Binding Value, StringFormat='Rotation = {0:F0}'}"
                Grid.Row="2" Grid.Column="1"
@@ -58,7 +55,6 @@
                 Maximum="360"
                 Value="{Binding RotationX, Mode=OneWayToSource}"
                 Margin="20,0,0,0" />
-
         <Label BindingContext="{x:Reference rotationXSlider}"
                Text="{Binding Value, StringFormat='RotationX = {0:F0}'}"
                Grid.Row="3" Grid.Column="1"
@@ -71,7 +67,6 @@
                 Maximum="360"
                 Value="{Binding RotationY, Mode=OneWayToSource}"
                 Margin="20,0,0,0" />
-
         <Label BindingContext="{x:Reference rotationYSlider}"
                Text="{Binding Value, StringFormat='RotationY = {0:F0}'}"
                Grid.Row="4" Grid.Column="1"

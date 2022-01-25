@@ -4,22 +4,10 @@
              xmlns:local="clr-namespace:XamlSamples"
              x:Class="XamlSamples.ListViewDemoPage"
              Title="ListView Demo Page">
-
     <ContentPage.Resources>
-        <ResourceDictionary>
-            <OnPlatform x:Key="boxSize"
-                        x:TypeArguments="x:Double">
-                <On Platform="iOS, Android, UWP" Value="50" />
-            </OnPlatform>
-
-            <OnPlatform x:Key="rowHeight"
-                        x:TypeArguments="x:Int32">
-                <On Platform="iOS, Android, UWP" Value="60" />
-            </OnPlatform>
-
-            <local:DoubleToIntConverter x:Key="intConverter" />
-
-        </ResourceDictionary>
+        <x:Double x:Key="boxSize">50</x:Double>
+        <x:Int32 x:Key="rowHeight">60</x:Int32>
+        <local:FloatToIntConverter x:Key="intConverter" />
     </ContentPage.Resources>
 
     <ListView ItemsSource="{x:Static local:NamedColor.All}"
@@ -30,31 +18,25 @@
                     <StackLayout Padding="5, 5, 0, 5"
                                  Orientation="Horizontal"
                                  Spacing="15">
-
                         <BoxView WidthRequest="{StaticResource boxSize}"
                                  HeightRequest="{StaticResource boxSize}"
                                  Color="{Binding Color}" />
-
                         <StackLayout Padding="5, 0, 0, 0"
                                      VerticalOptions="Center">
-
                             <Label Text="{Binding FriendlyName}"
                                    FontAttributes="Bold"
                                    FontSize="Medium" />
-
                             <StackLayout Orientation="Horizontal"
                                          Spacing="0">
-                                <Label Text="{Binding Color.R,
+                                <Label Text="{Binding Color.Red,
                                        Converter={StaticResource intConverter},
                                        ConverterParameter=255,
-                                       StringFormat='R={0:X2}'}" />
-                                
-                                <Label Text="{Binding Color.G,
+                                       StringFormat='R={0:X2}'}" />                                
+                                <Label Text="{Binding Color.Green,
                                        Converter={StaticResource intConverter},
                                        ConverterParameter=255,
-                                       StringFormat=', G={0:X2}'}" />
-                                
-                                <Label Text="{Binding Color.B,
+                                       StringFormat=', G={0:X2}'}" />                                
+                                <Label Text="{Binding Color.Blue,
                                        Converter={StaticResource intConverter},
                                        ConverterParameter=255,
                                        StringFormat=', B={0:X2}'}" />
