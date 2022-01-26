@@ -11,27 +11,21 @@
                 <x:StaticExtension Member="local:AppConstants.NormalFontSize" />
             </Label.FontSize>
         </Label>
-
         <Label Text="Label No. 2">
             <Label.FontSize>
                 <x:Static Member="local:AppConstants.NormalFontSize" />
             </Label.FontSize>
         </Label>
-
         <Label Text="Label No. 3"
                FontSize="{x:StaticExtension Member=local:AppConstants.NormalFontSize}" />
-
         <Label Text="Label No. 4"
-               FontSize="{x:Static Member=local:AppConstants.NormalFontSize}" />
-        
+               FontSize="{x:Static Member=local:AppConstants.NormalFontSize}" />        
         <Label Text="Label No. 5"
                FontSize="{x:Static local:AppConstants.NormalFontSize}" />
-
         <Label Text="&#x03C0; &#x00D7; E sized text"
                FontSize="{x:Static sys:Math.PI}"
                Scale="{x:Static sys:Math.E}" 
                HorizontalOptions="Center" />
-
         <Label HorizontalTextAlignment="Center"
                FontSize="{x:Static local:AppConstants.NormalFontSize}">
             <Label.FormattedText>

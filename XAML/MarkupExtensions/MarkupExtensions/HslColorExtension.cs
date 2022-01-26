@@ -2,13 +2,10 @@
 {
     public class HslColorExtension : IMarkupExtension<Color>
     {
-        public double H { set; get; }
-
-        public double S { set; get; }
-
-        public double L { set; get; }
-
-        public double A { set; get; } = 1.0;
+        public float H { get; set; }
+        public float S { get; set; }
+        public float L { get; set; }
+        public float A { get; set; } = 1.0f;
 
         public Color ProvideValue(IServiceProvider serviceProvider)
         {

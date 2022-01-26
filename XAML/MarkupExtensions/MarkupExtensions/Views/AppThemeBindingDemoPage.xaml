@@ -4,14 +4,13 @@
              x:Class="MarkupExtensions.AppThemeBindingDemoPage"
              Title="AppThemeBinding Demo">
     <ContentPage.Resources>
-
         <Style x:Key="labelStyle"
                TargetType="Label">
             <Setter Property="TextColor"
                     Value="{AppThemeBinding Black, Light=Blue, Dark=Teal}" />
         </Style>
-
     </ContentPage.Resources>
+    
     <StackLayout Margin="20">
         <Label Text="This text is green in light mode, and red in dark mode."
                TextColor="{AppThemeBinding Light=Green, Dark=Red}" />

@@ -3,26 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MarkupExtensions.ReferenceDemoPage"
              x:Name="page"
-             Title="x:Reference Demo">
-    
-    <StackLayout Margin="10, 0">
-        
+             Title="x:Reference Demo">    
+    <StackLayout Margin="10, 0">        
         <Label Text="{Binding Source={x:Reference page},
                               StringFormat='The type of this page is {0}'}"
                FontSize="18"
-               VerticalOptions="CenterAndExpand"
+               VerticalOptions="Center"
                HorizontalTextAlignment="Center" />
-
         <Slider x:Name="slider"
                 Maximum="360"
                 VerticalOptions="Center" />
-
         <Label BindingContext="{x:Reference slider}"
                Text="{Binding Value, StringFormat='{0:F0}&#x00B0; rotation'}"
                Rotation="{Binding Value}"
                FontSize="24"
                HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand" />
-        
+               VerticalOptions="Center" />        
     </StackLayout>
 </ContentPage>

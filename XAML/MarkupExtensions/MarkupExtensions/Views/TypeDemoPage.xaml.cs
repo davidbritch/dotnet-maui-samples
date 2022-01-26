@@ -4,6 +4,8 @@ namespace MarkupExtensions
 {
     public partial class TypeDemoPage : ContentPage
     {
+        public ICommand CreateCommand { get; private set; }
+
         public TypeDemoPage()
         {
             InitializeComponent();
@@ -17,7 +19,5 @@ namespace MarkupExtensions
 
             BindingContext = this;
         }
-
-        public ICommand CreateCommand { private set; get; }
     }
 }

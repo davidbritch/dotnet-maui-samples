@@ -5,12 +5,12 @@
              x:Class="MarkupExtensions.OnIdiomDemoPage"
              Title="OnIdiom Demo">
     <StackLayout Margin="20">
-        <BoxView x:Name="_boxView"
+        <BoxView x:Name="boxView"
                  Color="{OnIdiom Phone=Red, Tablet=Green, Desktop=Blue}"
                  WidthRequest="{OnIdiom Phone=200, Tablet=300, Desktop=400}"
                  HeightRequest="{OnIdiom Phone=200, Tablet=300, Desktop=400}"
                  HorizontalOptions="Center" />
-        <Label BindingContext="{x:Reference _boxView}" HorizontalTextAlignment="Center">
+        <Label BindingContext="{x:Reference boxView}" HorizontalTextAlignment="Center">
             <Label.FormattedText>
                 <FormattedString>
                     <Span Text="{Binding WidthRequest}" />
