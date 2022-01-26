@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 namespace XamlSamples
 {
-    class KeypadViewModel : INotifyPropertyChanged
+    public class KeypadViewModel : INotifyPropertyChanged
     {
         string inputString = "";
         string displayText = "";
@@ -11,31 +11,13 @@ namespace XamlSamples
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        // Constructor
-        public KeypadViewModel()
-        {
-            AddCharCommand = new Command<string>((key) =>
-                {
-                    // Add the key to the input string.
-                    InputString += key;
-                });
+        public ICommand AddCharCommand { get; private set; }
+        public ICommand DeleteCharCommand { get; private set; }
 
-            DeleteCharCommand = new Command(() =>
-                {
-                    // Strip a character from the input string.
-                    InputString = InputString.Substring(0, InputString.Length - 1);
-                },
-                () =>
-                {
-                    // Return true if there's something to delete.
-                    return InputString.Length > 0;  
-                });
-        }
-
-        // Public properties
         public string InputString
         {
-            protected set
+            get { return inputString; }
+            private set
             {
                 if (inputString != value)
                 {
@@ -47,13 +29,12 @@ namespace XamlSamples
                     ((Command)DeleteCharCommand).ChangeCanExecute();
                 }
             }
-
-            get { return inputString; }
         }
 
         public string DisplayText
         {
-            protected set 
+            get { return displayText; }
+            private set
             {
                 if (displayText != value)
                 {
@@ -61,13 +42,27 @@ namespace XamlSamples
                     OnPropertyChanged("DisplayText");
                 }
             }
-            get { return displayText; }
         }
 
-        // ICommand implementations
-        public ICommand AddCharCommand { protected set; get; }
+        public KeypadViewModel()
+        {
+            AddCharCommand = new Command<string>((key) =>
+            {
+                // Add the key to the input string.
+                InputString += key;
+            });
 
-        public ICommand DeleteCharCommand { protected set; get; }
+            DeleteCharCommand = new Command(() =>
+            {
+                // Strip a character from the input string.
+                InputString = InputString.Substring(0, InputString.Length - 1);
+            },
+            () =>
+            {
+                // Return true if there's something to delete.
+                return InputString.Length > 0;  
+            });
+        }
 
         string FormatText(string str)
         {
@@ -79,16 +74,11 @@ namespace XamlSamples
             }
             else if (str.Length < 8)
             {
-                formatted = String.Format("{0}-{1}", 
-                                          str.Substring(0, 3),
-                                          str.Substring(3));
+                formatted = string.Format("{0}-{1}", str.Substring(0, 3), str.Substring(3));
             }
             else
             {
-                formatted = String.Format("({0}) {1}-{2}", 
-                                          str.Substring(0, 3),
-                                          str.Substring(3, 3),
-                                          str.Substring(6));
+                formatted = string.Format("({0}) {1}-{2}", str.Substring(0, 3), str.Substring(3, 3), str.Substring(6));
             }
             return formatted;
         }
