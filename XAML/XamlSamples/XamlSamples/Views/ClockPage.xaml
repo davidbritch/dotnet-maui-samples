@@ -4,13 +4,12 @@
              xmlns:local="clr-namespace:XamlSamples;assembly=XamlSamples"
              x:Class="XamlSamples.ClockPage"
              Title="Clock Page">
+    <ContentPage.BindingContext>
+        <local:ClockViewModel />
+    </ContentPage.BindingContext>
 
     <Label Text="{Binding DateTime, StringFormat='{0:T}'}"
            FontSize="Large"
            HorizontalOptions="Center"
-           VerticalOptions="Center">
-        <Label.BindingContext>
-            <local:ClockViewModel />
-        </Label.BindingContext>
-    </Label>
+           VerticalOptions="Center" />
 </ContentPage>

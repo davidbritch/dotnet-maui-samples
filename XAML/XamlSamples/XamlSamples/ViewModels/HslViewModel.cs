@@ -4,85 +4,77 @@ namespace XamlSamples
 {
     public class HslViewModel : INotifyPropertyChanged
     {
-        double hue, saturation, luminosity;
+        float hue, saturation, luminosity;
         Color color;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public double Hue
+        public float Hue
         {
-            set
-            {
-                if (hue != value)
-                {
-                    hue = value;
-                    OnPropertyChanged("Hue");
-                    SetNewColor();
-                }
-            }
             get
             {
                 return hue;
             }
-        }
-
-        public double Saturation
-        {
             set
             {
-                if (saturation != value)
+                if (hue != value)
                 {
-                    saturation = value;
-                    OnPropertyChanged("Saturation");
-                    SetNewColor();
+                    Color = Color.FromHsla(value, saturation, luminosity);
                 }
             }
+        }
+
+        public float Saturation
+        {
             get
             {
                 return saturation;
             }
+            set
+            {
+                if (saturation != value)
+                {
+                    Color = Color.FromHsla(hue, value, luminosity);
+                }
+            }
         }
 
-        public double Luminosity
+        public float Luminosity
         {
+            get
+            {
+                return luminosity;
+            }
             set
             {
                 if (luminosity != value)
                 {
-                    luminosity = value;
-                    OnPropertyChanged("Luminosity");
-                    SetNewColor();
+                    Color = Color.FromHsla(hue, saturation, value);
                 }
-            }
-            get
-            {
-                return luminosity;
             }
         }
 
         public Color Color
         {
+            get
+            {
+                return color;
+            }
             set
             {
                 if (color != value)
                 {
                     color = value;
+                    hue = color.GetHue();
+                    saturation = color.GetSaturation();
+                    luminosity = color.GetLuminosity();
+                    
+                    OnPropertyChanged("Hue");
+                    OnPropertyChanged("Saturation");
+                    OnPropertyChanged("Luminosity");
                     OnPropertyChanged("Color");
-
-                    Hue = value.GetHue();
-                    Saturation = value.GetSaturation();
-                    Luminosity = value.GetLuminosity();
                 }
             }
-            get
-            {
-                return color;
-            }
-        }
-
-        void SetNewColor()
-        {
-            Color = Color.FromHsla(Hue, Saturation, Luminosity);
         }
 
         protected virtual void OnPropertyChanged(string propertyName)
