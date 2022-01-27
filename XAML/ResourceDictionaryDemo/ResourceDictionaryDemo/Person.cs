@@ -10,14 +10,14 @@
         {
         }
 
-		public Person (string name, int age, string location)
+        public Person(string name, int age, string location)
 		{
 			Name = name;
 			Age = age;
 			Location = location;
 		}
 
-		public override string ToString ()
+		public override string ToString()
 		{
 			return Name;
 		}
