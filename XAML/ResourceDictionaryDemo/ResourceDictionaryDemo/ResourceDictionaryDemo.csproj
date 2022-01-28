@@ -50,6 +50,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\MyThemes\MyThemes.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="ListDataPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
