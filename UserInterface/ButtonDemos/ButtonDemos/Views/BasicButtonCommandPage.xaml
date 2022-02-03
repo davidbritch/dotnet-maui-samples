@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ButtonDemos"
+             x:Class="ButtonDemos.BasicButtonCommandPage"
+             Title="Basic Button Command">    
+    <ContentPage.BindingContext>
+        <local:CommandDemoViewModel />
+    </ContentPage.BindingContext>
+    
+    <StackLayout>
+        <Label Text="{Binding Number, StringFormat='Value is now {0}'}"
+               FontSize="Large"
+               VerticalOptions="Center" 
+               HorizontalOptions="Center" />
+        <Button Text="Multiply by 2"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Command="{Binding MultiplyBy2Command}" />
+        <Button Text="Divide by 2"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Command="{Binding DivideBy2Command}" />
+    </StackLayout>
+</ContentPage>

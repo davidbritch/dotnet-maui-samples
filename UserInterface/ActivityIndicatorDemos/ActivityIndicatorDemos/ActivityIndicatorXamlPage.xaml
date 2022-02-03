@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ActivityIndicatorDemos.ActivityIndicatorXamlPage"
+             Title="ActivityIndicator XAML Demo">
+    <StackLayout>
+        <Label x:Name="runningStatusLabel"
+               Text="All tasks are completed!"
+               VerticalOptions="Center"
+               HorizontalOptions="Center" />
+        <ActivityIndicator x:Name="defaultActivityIndicator"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Fill" />
+        <ActivityIndicator x:Name="styledActivityIndicator"
+                           Color="Orange"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Fill" />
+        <Button Text="Toggle task status"
+                Clicked="OnButtonClicked"
+                VerticalOptions="Center"
+                HorizontalOptions="Center" />
+    </StackLayout>
+</ContentPage>

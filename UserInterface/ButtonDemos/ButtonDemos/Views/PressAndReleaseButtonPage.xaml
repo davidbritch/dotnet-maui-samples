@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ButtonDemos.PressAndReleaseButtonPage"
+             Title="Press and Release Button">
+    <StackLayout>
+        <Label x:Name="label"
+               Text="Press and hold the Button below"
+               FontSize="Large"
+               VerticalOptions="Center" 
+               HorizontalOptions="Center" />
+        <Button Text="Press to Rotate Text!"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Pressed="OnButtonPressed"
+                Released="OnButtonReleased" />
+    </StackLayout>
+</ContentPage>

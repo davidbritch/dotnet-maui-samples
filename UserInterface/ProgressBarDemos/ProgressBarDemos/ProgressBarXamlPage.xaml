@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProgressBarDemos.ProgressBarXamlPage"
+             Title="ProgressBar XAML Demo"
+             Padding="10">
+    <StackLayout>
+        <ProgressBar x:Name="defaultProgressBar"
+                     WidthRequest="500"
+                     VerticalOptions="Center"
+                     HorizontalOptions="Fill" />
+        <ProgressBar x:Name="styledProgressBar"
+                     WidthRequest="500"
+                     ProgressColor="Orange"
+                     VerticalOptions="Center"
+                     HorizontalOptions="Fill" />
+        <Button Text="Click to Progress"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Clicked="OnButtonClicked" />
+    </StackLayout>
+</ContentPage>

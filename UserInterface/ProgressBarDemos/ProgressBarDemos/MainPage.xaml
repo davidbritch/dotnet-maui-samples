@@ -1,0 +1,20 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:local="clr-namespace:ProgressBarDemos"
+             x:Class="ProgressBarDemos.MainPage"
+			 Title="ProgressBar demos">
+	<TableView Intent="Menu">
+		<TableRoot>
+			<TableSection>
+				<TextCell Text="ProgressBar XAML"
+                          Detail="Implement a ProgressBar in XAML"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:ProgressBarXamlPage}" />
+				<TextCell Text="ProgressBar Code"
+                          Detail="Implement a ProgressBar in code"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:ProgressBarCodePage}" />
+			</TableSection>
+		</TableRoot>
+	</TableView>
+</ContentPage>
