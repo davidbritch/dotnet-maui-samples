@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:SearchBarDemos.ViewModels" 
+             x:Class="SearchBarDemos.SearchBarXamlMvvmPage"
+             Padding="10"
+             Title="XAML MVVM SearchBar">
+    <ContentPage.BindingContext>
+        <viewmodels:SearchViewModel />
+    </ContentPage.BindingContext>
+    <StackLayout>
+        <SearchBar x:Name="searchBar"
+                   HorizontalOptions="Fill"
+                   VerticalOptions="Center"
+                   Placeholder="Search fruits..."
+                   SearchCommand="{Binding PerformSearch}" 
+                   SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}"/>
+        <Label Text="Enter a search term and press enter or click the magnifying glass to perform a search."
+               HorizontalOptions="Fill"
+               VerticalOptions="Center" />
+        <ListView x:Name="searchResults"
+                  HorizontalOptions="Fill"
+                  VerticalOptions="Center"
+                  ItemsSource="{Binding SearchResults}"/>
+    </StackLayout>
+</ContentPage>

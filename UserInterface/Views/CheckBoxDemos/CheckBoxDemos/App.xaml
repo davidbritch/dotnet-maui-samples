@@ -1,0 +1,13 @@
+﻿<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:windows="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;assembly=Microsoft.Maui.Controls"
+             xmlns:local="clr-namespace:CheckBoxDemos"
+             x:Class="CheckBoxDemos.App"
+             windows:Application.ImageDirectory="Assets">
+    <Application.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="RowSpacing" Value="6" />
+            <Setter Property="ColumnSpacing" Value="6" />
+        </Style>
+    </Application.Resources>
+</Application>
