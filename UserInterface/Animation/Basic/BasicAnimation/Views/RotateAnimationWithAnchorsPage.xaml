@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BasicAnimation.RotateAnimationWithAnchorsPage"
+             Title="Rotate Animation with Anchors">
+    <AbsoluteLayout x:Name="absoluteLayout"
+                    SizeChanged="OnSizeChanged">
+        <Image x:Name="image"
+               Source="dotnet_bot.png"
+               SizeChanged="OnSizeChanged">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnImageTapped" />
+            </Image.GestureRecognizers>
+        </Image>
+    </AbsoluteLayout>
+</ContentPage>

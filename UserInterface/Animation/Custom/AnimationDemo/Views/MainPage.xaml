@@ -1,0 +1,8 @@
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+            xmlns:local="clr-namespace:AnimationDemo" 
+            x:Class="AnimationDemo.MainPage">
+    <local:SimpleAnimationPage />
+    <local:ChildAnimationPage />
+    <local:ColorAnimationPage />
+</TabbedPage>

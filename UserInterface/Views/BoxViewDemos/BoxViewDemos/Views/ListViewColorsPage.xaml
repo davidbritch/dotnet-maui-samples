@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BoxViewDemos"
+             x:Class="BoxViewDemos.ListViewColorsPage"
+             Title="ListView colors">
+    <ListView SeparatorVisibility="None"
+              ItemsSource="{x:Static local:NamedColor.All}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ContentView Padding="5">
+                        <Frame BorderColor="Gray"
+                               Padding="10">
+                            <StackLayout Orientation="Horizontal">
+                                <BoxView Color="{Binding Color}"
+                                         WidthRequest="50"
+                                         HeightRequest="50" />
+                                <StackLayout>
+                                    <Label Text="{Binding FriendlyName}"
+                                           FontSize="22"
+                                           VerticalOptions="Start" />
+                                    <Label Text="{Binding RgbDisplay, StringFormat='RGB = {0}'}"
+                                           FontSize="16"
+                                           VerticalOptions="Center" />
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </ContentView>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

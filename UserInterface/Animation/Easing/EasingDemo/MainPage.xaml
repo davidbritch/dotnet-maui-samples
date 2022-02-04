@@ -1,0 +1,15 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasingDemo.MainPage">
+    <StackLayout Margin="0,20,0,0">
+        <Label Text="Select easing function:" />
+        <Picker x:Name="picker" SelectedIndexChanged="OnSelectedPickerIndexChanged" />
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Duration:" VerticalOptions="Center" />
+            <Entry x:Name="entry" Text="2000" />
+            <Label Text="ms" VerticalOptions="Center" />
+        </StackLayout>
+        <Button Text="Run Animation" Clicked="OnRunAnimationButtonClicked" VerticalOptions="End" />
+        <Image x:Name="image" Source="dotnet_bot.png" VerticalOptions="Start" />
+    </StackLayout>
+</ContentPage>

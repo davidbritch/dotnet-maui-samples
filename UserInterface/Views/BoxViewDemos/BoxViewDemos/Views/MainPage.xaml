@@ -1,0 +1,30 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:local="clr-namespace:BoxViewDemos"
+             x:Class="BoxViewDemos.MainPage"
+			 Title="BoxView demos">
+    <TableView Intent="Menu">
+        <TableRoot>
+            <TableSection Title="BoxView">
+                <TextCell Text="Basic BoxView"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:BasicBoxViewPage}" />
+                <TextCell Text="Clock"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:BoxViewClockPage}" />
+                <TextCell Text="Dot matrix clock"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:DotMatrixClockPage}" />
+                <TextCell Text="Game of life"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:GameOfLifePage}" />
+                <TextCell Text="ListView colors"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:ListViewColorsPage}" />
+                <TextCell Text="Text decorations"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:TextDecorationPage}" />                
+            </TableSection>
+        </TableRoot>
+    </TableView>
+</ContentPage>
