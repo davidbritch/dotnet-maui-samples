@@ -1,0 +1,32 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DaysBetweenDates.MainPage">
+    <StackLayout Margin="10">
+        <Label Text="Days Between Dates"
+               Style="{DynamicResource TitleStyle}"
+               Margin="0, 20"
+               HorizontalTextAlignment="Center" />
+        <Label Text="Start Date:" />
+        <DatePicker x:Name="startDatePicker"
+                    Format="D"
+                    Margin="30, 0, 0, 30"
+                    DateSelected="OnDateSelected" />
+        <Label Text="End Date:" />
+        <DatePicker x:Name="endDatePicker"
+                    MinimumDate="{Binding Source={x:Reference startDatePicker},
+                                          Path=Date}"
+                    Format="D"
+                    Margin="30, 0, 0, 30"
+                    DateSelected="OnDateSelected" />
+        <StackLayout Orientation="Horizontal"
+                     Margin="0, 0, 0, 30">
+            <Label Text="Include both days in total: "
+                   VerticalOptions="Center" />
+            <Switch x:Name="includeSwitch"
+                    Toggled="OnSwitchToggled" />
+        </StackLayout>
+        <Label x:Name="resultLabel"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center" />
+    </StackLayout>
+</ContentPage>
