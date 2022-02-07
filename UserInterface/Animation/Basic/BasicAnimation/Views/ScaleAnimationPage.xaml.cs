@@ -1,6 +1,4 @@
-﻿using ViewExtensions = Microsoft.Maui.Controls.ViewExtensions;
-
-namespace BasicAnimation
+﻿namespace BasicAnimation
 {
 	public partial class ScaleAnimationPage : ContentPage
 	{
@@ -29,8 +27,8 @@ namespace BasicAnimation
 
 		void OnCancelAnimationButtonClicked (object sender, EventArgs e)
 		{
-			ViewExtensions.CancelAnimations (image);
-			SetIsEnabledButtonState (true, false);
+			image.CancelAnimations();
+			SetIsEnabledButtonState(true, false);
 		}
 	}
 }

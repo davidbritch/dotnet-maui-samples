@@ -1,6 +1,4 @@
-﻿using ViewExtensions = Microsoft.Maui.Controls.ViewExtensions;
-
-namespace BasicAnimation
+﻿namespace BasicAnimation
 {
 	public partial class RelativeRotationPage : ContentPage
 	{
@@ -24,7 +22,7 @@ namespace BasicAnimation
 
 		void OnCancelAnimationButtonClicked (object sender, EventArgs e)
 		{
-			ViewExtensions.CancelAnimations (image);
+			image.CancelAnimations();
 			SetIsEnabledButtonState (true, false);
 		}
 	}
