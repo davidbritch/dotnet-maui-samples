@@ -4,7 +4,7 @@
     {
         ProgressBar defaultProgressBar;
         ProgressBar styledProgressBar;
-        float progress = 0f;
+        double progress;
 
         public ProgressBarCodePage()
         {
@@ -48,7 +48,7 @@
 
         async void OnButtonClicked(object sender, EventArgs e)
         {
-            progress += 0.2f;
+            progress += 0.2;
 
             if (progress > 1)
             {
