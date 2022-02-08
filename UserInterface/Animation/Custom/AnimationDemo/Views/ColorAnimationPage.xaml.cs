@@ -27,7 +27,6 @@
 		async void OnAnimatePageBackgroundButtonClicked(object sender, EventArgs e)
 		{
 			SetIsEnabledCancelButtonState(true);
-
 			await this.ColorTo(Color.FromRgb(0, 0, 0), Color.FromRgb(255, 255, 255), c => BackgroundColor = c, 5000);
 			BackgroundColor = Colors.White;
 		}
@@ -35,7 +34,6 @@
 		async void OnAnimateBoxViewButtonClicked(object sender, EventArgs e)
 		{
 			SetIsEnabledCancelButtonState(true);
-
 			await boxView.ColorTo(Colors.Blue, Colors.Red, c => boxView.Color = c, 4000);
 		}
 
@@ -44,7 +42,6 @@
 			boxView.CancelAnimation();
 			label.CancelAnimation();
 			this.CancelAnimation();
-
 			SetIsEnabledCancelButtonState(false);
 		}
 	}
