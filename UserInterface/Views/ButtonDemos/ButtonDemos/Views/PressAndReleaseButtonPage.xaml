@@ -4,15 +4,15 @@
              x:Class="ButtonDemos.PressAndReleaseButtonPage"
              Title="Press and Release Button">
     <StackLayout>
-        <Label x:Name="label"
-               Text="Press and hold the Button below"
-               FontSize="Large"
-               VerticalOptions="Center" 
-               HorizontalOptions="Center" />
         <Button Text="Press to Rotate Text!"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
                 Pressed="OnButtonPressed"
                 Released="OnButtonReleased" />
+        <Label x:Name="label"
+               Text="Press and hold the Button above"
+               FontSize="Large"
+               VerticalOptions="Center" 
+               HorizontalOptions="Center" />
     </StackLayout>
 </ContentPage>

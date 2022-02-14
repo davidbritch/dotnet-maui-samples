@@ -9,7 +9,6 @@ namespace ButtonDemos
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-
         public ICommand MultiplyBy2Command { get; private set; }
 
         public ICommand DivideBy2Command { get; private set; }

@@ -4,14 +4,14 @@
              x:Class="ButtonDemos.BasicButtonClickPage"
              Title="Basic Button Click">
     <StackLayout>
-        <Label x:Name="label"
-               Text="Click the Button below"
-               FontSize="Large"
-               VerticalOptions="Center" 
-               HorizontalOptions="Center" />
         <Button Text="Click to Rotate Text!"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
-                Clicked="OnButtonClicked" />        
+                Clicked="OnButtonClicked" />
+        <Label x:Name="label"
+               Text="Click the Button above"
+               FontSize="Large"
+               VerticalOptions="Center" 
+               HorizontalOptions="Center" />
     </StackLayout>
 </ContentPage>

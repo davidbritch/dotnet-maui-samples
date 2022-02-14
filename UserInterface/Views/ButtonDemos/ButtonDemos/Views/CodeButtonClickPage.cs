@@ -8,7 +8,7 @@
 
             Label label = new Label
             {
-                Text = "Click the Button below",
+                Text = "Click the Button above",
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
                 VerticalOptions = LayoutOptions.Center,
                 HorizontalOptions = LayoutOptions.Center
@@ -26,8 +26,8 @@
             {
                 Children =
                 {
-                    label,
-                    button
+                    button,
+                    label
                 }
             };
         }
