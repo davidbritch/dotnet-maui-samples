@@ -9,15 +9,15 @@
                FontAttributes="Bold"
                HorizontalOptions="Center" />
 
-       <ImageButton Source="xamarinlogo.png"
+       <ImageButton Source="dotnet_bot.png"
                     HorizontalOptions="Center"
-                    VerticalOptions="CenterAndExpand"
+                    VerticalOptions="Center"
                     Clicked="OnImageButtonClicked" />
 
         <Label x:Name="label"
                Text="0 ImageButton clicks"
                FontSize="Large"
                HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand" />
+               VerticalOptions="Center" />
     </StackLayout>
 </ContentPage>

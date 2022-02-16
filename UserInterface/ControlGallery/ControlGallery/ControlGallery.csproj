@@ -52,6 +52,7 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\Banana.jpg" />
+	  <None Remove="Resources\Images\dotnet_bot.png" />
 	  <None Remove="Resources\Images\FacePalm.jpg" />
 	  <None Remove="Resources\Images\icon.png" />
 	  <None Remove="Resources\Images\SeatedMonkey.jpg" />

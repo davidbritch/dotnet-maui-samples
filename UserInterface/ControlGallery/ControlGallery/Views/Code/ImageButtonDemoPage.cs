@@ -20,9 +20,9 @@ namespace ControlGallery.Views.Code
 
             ImageButton imageButton = new ImageButton
             {
-                Source = "XamarinLogo.png",
+                Source = "dotnet_bot.png",
                 HorizontalOptions = LayoutOptions.Center,
-                VerticalOptions = LayoutOptions.CenterAndExpand
+                VerticalOptions = LayoutOptions.Center
             };
             imageButton.Clicked += OnImageButtonClicked;
 
@@ -31,7 +31,7 @@ namespace ControlGallery.Views.Code
                 Text = "0 ImageButton clicks",
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
                 HorizontalOptions = LayoutOptions.Center,
-                VerticalOptions = LayoutOptions.CenterAndExpand
+                VerticalOptions = LayoutOptions.Center
             };
 
             // Build the page.
