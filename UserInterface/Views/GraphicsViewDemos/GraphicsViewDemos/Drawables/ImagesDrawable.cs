@@ -1,4 +1,5 @@
 ﻿using Microsoft.Maui.Graphics;
+using Microsoft.Maui.Graphics.Platform;
 using System.IO;
 using System.Reflection;
 
@@ -12,7 +13,7 @@ namespace GraphicsViewDemos.Drawables
             Assembly assembly = GetType().GetTypeInfo().Assembly;
             using (Stream stream = assembly.GetManifestResourceStream("GraphicsViewDemos.Resources.Images.dotnet_bot.png"))
             {
-                image = GraphicsPlatform.CurrentService.LoadImageFromStream(stream);
+                image = PlatformImage.FromStream(stream);
             }
 
             if (image != null)
@@ -30,7 +31,7 @@ namespace GraphicsViewDemos.Drawables
             //Assembly assembly = GetType().GetTypeInfo().Assembly;
             //using (Stream stream = assembly.GetManifestResourceStream("GraphicsViewDemos.Resources.Images.dotnet_bot.png"))
             //{
-            //    image = GraphicsPlatform.CurrentService.LoadImageFromStream(stream);
+            //    image = PlatformImage.FromStream(stream);
             //}
 
             //if (image != null)
@@ -49,7 +50,7 @@ namespace GraphicsViewDemos.Drawables
             Assembly assembly = GetType().GetTypeInfo().Assembly;
             using (Stream stream = assembly.GetManifestResourceStream("GraphicsViewDemos.Resources.Images.dotnet_bot.png"))
             {
-                image = GraphicsPlatform.CurrentService.LoadImageFromStream(stream);
+                image = PlatformImage.FromStream(stream);
             }
 
             if (image != null)
@@ -68,7 +69,7 @@ namespace GraphicsViewDemos.Drawables
             Assembly assembly = GetType().GetTypeInfo().Assembly;
             using (Stream stream = assembly.GetManifestResourceStream("GraphicsViewDemos.Resources.Images.dotnet_bot.png"))
             {
-                image = GraphicsPlatform.CurrentService.LoadImageFromStream(stream);
+                image = PlatformImage.FromStream(stream);
             }
 
             // Save image to a memory stream

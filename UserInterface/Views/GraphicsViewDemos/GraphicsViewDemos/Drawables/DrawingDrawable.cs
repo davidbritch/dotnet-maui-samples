@@ -1,4 +1,5 @@
 ﻿using Microsoft.Maui.Graphics;
+using Microsoft.Maui.Graphics.Platform;
 using Microsoft.Maui.Graphics.Text;
 using System;
 using System.IO;
@@ -149,7 +150,7 @@ namespace GraphicsViewDemos.Drawables
             Assembly assembly = GetType().GetTypeInfo().Assembly;
             using (Stream stream = assembly.GetManifestResourceStream("GraphicsViewDemos.Resources.Images.dotnet_bot.png"))
             {
-                image = GraphicsPlatform.CurrentService.LoadImageFromStream(stream);
+                image = PlatformImage.FromStream(stream);
             }
 
             if (image != null)
@@ -166,15 +167,15 @@ namespace GraphicsViewDemos.Drawables
             canvas.FontColor = Colors.Blue;
             canvas.FontSize = 18;
 
-            canvas.SetToSystemFont();
+            canvas.Font = Font.Default;
             canvas.DrawString("Text is left aligned.", 20, 20, 380, 100, HorizontalAlignment.Left, VerticalAlignment.Top);
             canvas.DrawString("Text is centered.", 20, 60, 380, 100, HorizontalAlignment.Center, VerticalAlignment.Top);
             canvas.DrawString("Text is right aligned.", 20, 100, 380, 100, HorizontalAlignment.Right, VerticalAlignment.Top);
 
-            canvas.SetToBoldSystemFont();
+            canvas.Font = Font.DefaultBold;
             canvas.DrawString("This text is displayed using the bold system font.", 20, 140, 350, 100, HorizontalAlignment.Left, VerticalAlignment.Top);
 
-            canvas.FontName = "Arial";
+            canvas.Font = new Font("Arial");
             canvas.FontColor = Colors.Black;
             canvas.SetShadow(new SizeF(6, 6), 4, Colors.Gray);
             canvas.DrawString("This text has a shadow.", 20, 200, 300, 100, HorizontalAlignment.Left, VerticalAlignment.Top);
@@ -288,7 +289,7 @@ namespace GraphicsViewDemos.Drawables
             var assembly = GetType().GetTypeInfo().Assembly;
             using (var stream = assembly.GetManifestResourceStream("GraphicsViewDemos.Resources.Images.dotnet_bot.png"))
             {
-                image = GraphicsPlatform.CurrentService.LoadImageFromStream(stream);
+                image = PlatformImage.FromStream(stream);
             }
 
             if (image != null)
@@ -309,7 +310,7 @@ namespace GraphicsViewDemos.Drawables
             var assembly = GetType().GetTypeInfo().Assembly;
             using (var stream = assembly.GetManifestResourceStream("GraphicsViewDemos.Resources.Images.dotnet_bot.png"))
             {
-                image = GraphicsPlatform.CurrentService.LoadImageFromStream(stream);
+                image = PlatformImage.FromStream(stream);
             }
 
             if (image != null)
@@ -319,5 +320,4 @@ namespace GraphicsViewDemos.Drawables
             }
         }
     }
-
 }

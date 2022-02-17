@@ -1,4 +1,5 @@
 ﻿using Microsoft.Maui.Graphics;
+using Microsoft.Maui.Graphics.Platform;
 using System.Reflection;
 
 namespace GraphicsViewDemos.Drawables
@@ -11,7 +12,7 @@ namespace GraphicsViewDemos.Drawables
             var assembly = GetType().GetTypeInfo().Assembly;
             using (var stream = assembly.GetManifestResourceStream("GraphicsViewDemos.Resources.Images.dotnet_bot.png"))
             {
-                image = GraphicsPlatform.CurrentService.LoadImageFromStream(stream);
+                image = PlatformImage.FromStream(stream);
             }
 
             //if (image != null)
