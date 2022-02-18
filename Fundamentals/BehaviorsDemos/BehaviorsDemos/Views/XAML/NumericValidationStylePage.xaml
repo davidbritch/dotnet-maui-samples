@@ -9,7 +9,7 @@
         <ResourceDictionary>
             <Style x:Key="NumericValidationStyle" TargetType="Entry">
                 <Style.Setters>
-                    <Setter Property="local:AttachedNumericValidationBehavior.AttachBehavior" Value="true" />
+                    <Setter Property="local:NumericValidationStyleBehavior.AttachBehavior" Value="true" />
                 </Style.Setters>
             </Style>
         </ResourceDictionary>

@@ -8,7 +8,7 @@
 			IconImageSource = "csharp.png";
 
 			var entry = new Entry { Placeholder = "Enter a System.Double" };
-			AttachedNumericValidationBehavior.SetAttachBehavior (entry, true);
+			NumericValidationStyleBehavior.SetAttachBehavior (entry, true);
 
 			Content = new StackLayout {
 				Padding = new Thickness (5, 50, 5, 0),
