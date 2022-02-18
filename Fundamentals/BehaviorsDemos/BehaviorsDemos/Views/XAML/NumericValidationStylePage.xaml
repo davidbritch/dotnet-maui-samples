@@ -5,17 +5,17 @@
              x:Class="BehaviorsDemos.NumericValidationStylePage" 
              Title=".NET MAUI behavior with a style demo" 
              IconImageSource="xaml.png">
-	<ContentPage.Resources>
-		<ResourceDictionary>
-			<Style x:Key="NumericValidationStyle" TargetType="Entry">
-				<Style.Setters>
-					<Setter Property="local:AttachedNumericValidationBehavior.AttachBehavior" Value="true" />
-				</Style.Setters>
-			</Style>
-		</ResourceDictionary>
-	</ContentPage.Resources>
-	<StackLayout Padding="10,50,10,0">
-		<Label Text="Red when the number isn't valid" FontSize="Small" />
-		<Entry Placeholder="Enter a System.Double" Style="{StaticResource NumericValidationStyle}" />
-	</StackLayout>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="NumericValidationStyle" TargetType="Entry">
+                <Style.Setters>
+                    <Setter Property="local:AttachedNumericValidationBehavior.AttachBehavior" Value="true" />
+                </Style.Setters>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout Padding="10,50,10,0">
+        <Label Text="Red when the number isn't valid" FontSize="Small" />
+        <Entry Placeholder="Enter a System.Double" Style="{StaticResource NumericValidationStyle}" />
+    </StackLayout>
 </ContentPage>
