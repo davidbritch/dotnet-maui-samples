@@ -3,7 +3,7 @@
     public class NumericValidationStyleBehavior : Behavior<Entry>
     {
         public static readonly BindableProperty AttachBehaviorProperty =
-            BindableProperty.CreateAttached("AttachBehavior", typeof(bool), typeof(NumericValidationBehavior), false, propertyChanged: OnAttachBehaviorChanged);
+            BindableProperty.CreateAttached("AttachBehavior", typeof(bool), typeof(NumericValidationStyleBehavior), false, propertyChanged: OnAttachBehaviorChanged);
 
         public static bool GetAttachBehavior(BindableObject view)
         {
@@ -26,11 +26,11 @@
             bool attachBehavior = (bool)newValue;
             if (attachBehavior)
             {
-                entry.Behaviors.Add(new NumericValidationBehavior());
+                entry.Behaviors.Add(new NumericValidationStyleBehavior());
             }
             else
             {
-                var toRemove = entry.Behaviors.FirstOrDefault(b => b is NumericValidationBehavior);
+                Behavior toRemove = entry.Behaviors.FirstOrDefault(b => b is NumericValidationStyleBehavior);
                 if (toRemove != null)
                 {
                     entry.Behaviors.Remove(toRemove);
