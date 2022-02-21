@@ -30,7 +30,7 @@ namespace ScrollViewDemos
             StringBuilder stringBuilder = new StringBuilder();
 
             // Loop through the public static fields of the Color structure.
-            foreach (FieldInfo fieldInfo in typeof(Color).GetRuntimeFields())
+            foreach (FieldInfo fieldInfo in typeof(Colors).GetRuntimeFields())
             {
                 if (fieldInfo.IsPublic &&
                     fieldInfo.IsStatic &&
