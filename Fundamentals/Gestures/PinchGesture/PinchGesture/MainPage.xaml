@@ -4,9 +4,7 @@
              x:Class="PinchGesture.MainPage">
     <Grid Padding="20">
         <local:PinchToZoomContainer>
-            <local:PinchToZoomContainer.Content>
-                <Image Source="waterfront.jpg" />
-            </local:PinchToZoomContainer.Content>
+            <Image Source="waterfront.jpg" />
         </local:PinchToZoomContainer>
     </Grid>
 </ContentPage>
