@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MenuItemDemos"
+             x:Class="MenuItemDemos.MainPage"
+             Padding="10"
+             Title="Menu Item Demos">
+    <TableView Intent="Menu">
+        <TableRoot>
+            <TableSection>
+                <TextCell Text="MenuItem XAML"
+                          Detail="Implement a MenuItem in XAML"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:MenuItemXamlPage}" />
+                <TextCell Text="MenuItem XAML MVVM"
+                          Detail="Implement a MenuItem in XAML"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:MenuItemXamlMvvmPage}" />
+                <TextCell Text="MenuItem Code"
+                          Detail="Implement a MenuItem in code"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:MenuItemCodePage}" />
+            </TableSection>
+        </TableRoot>
+    </TableView>
+
+</ContentPage>
