@@ -13,7 +13,8 @@ namespace TapGesture
             {
                 Source = "tapped.jpg",
                 WidthRequest = 150,
-                HeightRequest = 150            };
+                HeightRequest = 150   
+            };
 
             TapGestureRecognizer tapGestureRecognizer = new TapGestureRecognizer();
             //			tapGestureRecognizer.NumberOfTapsRequired = 2; // double-tap

@@ -1,10 +1,17 @@
 ﻿<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:windows="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;assembly=Microsoft.Maui.Controls"
              xmlns:local="clr-namespace:SystemThemesDemo"
-             x:Class="SystemThemesDemo.App"
-             windows:Application.ImageDirectory="Assets">
+             x:Class="SystemThemesDemo.App">
     <Application.Resources>
+
+        <Style TargetType="StackLayout">
+            <Setter Property="Spacing" Value="6" />
+        </Style>
+        <Style TargetType="Grid">
+            <Setter Property="RowSpacing" Value="6" />
+            <Setter Property="ColumnSpacing" Value="6" />
+        </Style>
+
         <Color x:Key="TransparentColor">Transparent</Color>
 
         <!-- Light colors -->
@@ -69,15 +76,6 @@
             <Setter Property="FontSize"
                     Value="15" />
         </Style>
-
-        <Style TargetType="StackLayout">
-            <Setter Property="Spacing" Value="6" />
-        </Style>
-
-        <Style TargetType="Grid">
-            <Setter Property="RowSpacing" Value="6" />
-            <Setter Property="ColumnSpacing" Value="6" />
-        </Style>
-
+        
     </Application.Resources>
 </Application>

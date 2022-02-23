@@ -1,6 +1,4 @@
-﻿using SystemThemesDemo.Views;
-
-namespace SystemThemesDemo;
+﻿namespace SystemThemesDemo;
 
 public partial class App : Application
 {
@@ -8,6 +6,6 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		MainPage = new NavigationPage(new UserSummaryPage());
+		MainPage = new NavigationPage(new Views.UserSummaryPage());
 	}
 }
