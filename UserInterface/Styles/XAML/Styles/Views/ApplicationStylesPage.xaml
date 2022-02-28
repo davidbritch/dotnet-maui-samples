@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Styles.ApplicationStylesPage" 
+             Title="Application" 
+             IconImageSource="xaml.png">
+    <ContentPage.Resources>
+        <Style x:Key="buttonStyle" 
+               TargetType="Button">
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="BorderColor" Value="Lime" />
+            <Setter Property="CornerRadius" Value="5" />
+            <Setter Property="BorderWidth" Value="5" />
+            <Setter Property="WidthRequest" Value="200" />
+            <Setter Property="TextColor" Value="Red" />
+        </Style>
+    </ContentPage.Resources>
+    <StackLayout Padding="0,20,0,0">
+        <StackLayout.Resources>
+            <Style x:Key="buttonStyle" 
+                   TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="BorderColor" Value="Lime" />
+                <Setter Property="CornerRadius" Value="5" />
+                <Setter Property="BorderWidth" Value="5" />
+                <Setter Property="WidthRequest" Value="200" />
+                <Setter Property="TextColor" Value="Blue" />
+            </Style>
+        </StackLayout.Resources>
+        <Button Text="These buttons"
+                Style="{StaticResource buttonStyle}" />
+        <Button Text="are demonstrating" 
+                Style="{StaticResource buttonStyle}" />
+        <Button Text="application style overrides" 
+                Style="{StaticResource buttonStyle}" />
+    </StackLayout>
+</ContentPage>

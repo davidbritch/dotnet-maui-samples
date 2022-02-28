@@ -1,0 +1,39 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Styles"
+             x:Class="Styles.MainPage"
+             Title="Style demos">
+    <TableView Intent="Menu">
+        <TableRoot>
+            <TableSection Title="Styles">
+                <TextCell Text="No styles"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:NoStylesPage}" />
+                <TextCell Text="Explicit styles"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:ExplicitStylesPage}" />
+                <TextCell Text="Implicit styles"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:ImplicitStylesPage}" />
+                <TextCell Text="Application styles"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:ApplicationStylesPage}" />
+                <TextCell Text="Style inheritance"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:StyleInheritancePage}" />
+                <TextCell Text="Style classes"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:StyleClassPage}" />
+                <TextCell Text="Dynamic styles"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:DynamicStylesPage}" />
+                <TextCell Text="Dynamic styles with inheritance"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:DynamicStylesInheritancePage}" />
+                <TextCell Text="Device styles"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:DeviceStylesPage}" />
+            </TableSection>
+        </TableRoot>
+    </TableView>
+</ContentPage>

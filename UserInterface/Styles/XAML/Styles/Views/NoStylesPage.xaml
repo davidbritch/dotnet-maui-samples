@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Styles.NoStylesPage" 
+             Title="No Styles" 
+             IconImageSource="xaml.png">
+    <StackLayout Padding="0,20,0,0">
+        <Label Text="These labels" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center" 
+                   FontSize="Large" />
+        <Label Text="are not" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center" 
+                   FontSize="Large" />
+        <Label Text="using styles" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center" 
+                   FontSize="Large" />
+    </StackLayout>
+</ContentPage>

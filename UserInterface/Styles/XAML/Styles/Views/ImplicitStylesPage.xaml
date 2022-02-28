@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:Styles;assembly=Styles" 
+             x:Class="Styles.ImplicitStylesPage" 
+             Title="Implicit" 
+             IconImageSource="xaml.png">
+    <ContentPage.Resources>
+        <Style TargetType="Entry">
+            <Setter Property="HorizontalOptions" Value="Fill" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="BackgroundColor" Value="Yellow" />
+            <Setter Property="FontAttributes" Value="Italic" />
+            <Setter Property="TextColor" Value="Blue" />
+        </Style>
+    </ContentPage.Resources>
+    <StackLayout Padding="0,20,0,0">
+        <Entry Text="These entries" />
+        <Entry Text="are demonstrating" />
+        <Entry Text="implicit styles," />
+        <Entry Text="and an implicit style override" 
+               BackgroundColor="Lime" 
+               TextColor="Red" />
+        <local:CustomEntry Text="Subclassed Entry is not receiving the style" />
+    </StackLayout>
+</ContentPage>
