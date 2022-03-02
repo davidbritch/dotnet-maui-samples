@@ -1,0 +1,48 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TextSample"
+             x:Class="TextSample.MainPage"
+             Title="Text control demos">
+    <TableView Intent="Menu">
+        <TableRoot>
+            <TableSection Title="Styles">
+                <TextCell Text="Label (XAML)"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:LabelPage}" />
+                <TextCell Text="Label (Code)"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:LabelPageCode}" />
+                <TextCell Text="Entry (XAML)"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:EntryPage}" />
+                <TextCell Text="Entry (Code)"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:EntryPageCode}" />
+                <TextCell Text="Editor (XAML)"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:EditorPage}" />
+                <TextCell Text="Editor (Code)"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:EditorPageCode}" />
+                <TextCell Text="Login (XAML)"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:LoginPageXaml}" />
+                <TextCell Text="Login (Code)"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:LoginPageCode}" />
+                <TextCell Text="Orders (XAML)"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:OrderPageXaml}" />
+                <TextCell Text="Orders (Code)"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:OrderPageCode}" />
+                <TextCell Text="Built in styles (XAML)"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:BuiltInStylesXaml}" />
+                <TextCell Text="Custom styles (XAML)"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:CustomStylesXaml}" />
+            </TableSection>
+        </TableRoot>
+    </TableView>
+</ContentPage>

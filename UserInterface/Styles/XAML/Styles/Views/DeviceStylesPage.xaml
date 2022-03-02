@@ -8,7 +8,7 @@
         <Style x:Key="myBodyStyle" 
                TargetType="Label" 
                BaseResourceKey="BodyStyle">
-            <Setter Property="TextColor" Value="Accent" />
+            <Setter Property="TextColor" Value="Black" />
         </Style>
     </ContentPage.Resources>
     <StackLayout Padding="0,20,0,0">
