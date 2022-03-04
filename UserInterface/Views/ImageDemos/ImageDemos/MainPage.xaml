@@ -1,0 +1,25 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ImageDemos"
+             x:Class="ImageDemos.MainPage">
+    <ScrollView>
+        <StackLayout>
+            <Image Source="dotnet_bot.png"                
+                   WidthRequest="200 "/>
+            <Image Source="https://aka.ms/campus.jpg"
+                   HeightRequest="300" />
+            <Image HeightRequest="500">
+                <Image.Source>
+                    <UriImageSource Uri="https://aka.ms/campus.jpg"
+                                    CacheValidity="10:00:00.0" />
+                </Image.Source>
+            </Image>
+            <Image Source="{local:ImageResource monkey.png}"
+                   HeightRequest="100" />
+            <Image x:Name="resourceImage"
+                   HeightRequest="100" />
+            <Image x:Name="assemblyResourceImage"
+                   HeightRequest="100" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
