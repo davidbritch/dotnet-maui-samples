@@ -63,11 +63,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Content Include="Resources\Raw\default.css" />
-	  <Content Include="Resources\Raw\XamarinLogo.png" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <EmbeddedResource Include="index.html" />
 	</ItemGroup>
 

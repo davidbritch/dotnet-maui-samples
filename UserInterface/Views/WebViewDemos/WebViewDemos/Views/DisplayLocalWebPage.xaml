@@ -3,5 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WebViewDemos.DisplayLocalWebPage"
              Title="Display local web page">
-    <WebView Source="local.html" />
+    <!--<WebView x:Name="webView"
+             Source="local.html" />-->
+    <WebView>
+        <WebView.Source>
+            <HtmlWebViewSource>
+                <HtmlWebViewSource.Html>
+                    <![CDATA[
+                    <html>
+                    <head>
+                    </head>
+                    <body>
+                    <h1>.NET MAUI</h1>
+                    <p>The CSS and image are loaded from local files!</p>
+                    <p><a href="local.html">next page</a></p>
+                    </body>
+                    </html>                    
+                    ]]>
+                </HtmlWebViewSource.Html>
+            </HtmlWebViewSource>
+        </WebView.Source>
+    </WebView>
 </ContentPage>
