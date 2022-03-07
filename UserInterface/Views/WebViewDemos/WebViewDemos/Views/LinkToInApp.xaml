@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="WebViewDemos.LinkToInApp"
+             Title="In-App Browser Demo">
+	<StackLayout Margin="20">
+		<Label Text="This demonstrates how you would open a link without leaving your app, while giving users a good experience." />
+		<Button Text="View docs" 
+                Clicked="OnButtonClicked" />
+	</StackLayout>
+</ContentPage>

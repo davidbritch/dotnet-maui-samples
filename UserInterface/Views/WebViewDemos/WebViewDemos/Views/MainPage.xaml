@@ -1,0 +1,36 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:WebViewDemos"
+             x:Class="WebViewDemos.MainPage"
+             Title="WebView demos">
+    <TableView Intent="Menu">
+        <TableRoot>
+            <TableSection Title="WebView demos">
+                <TextCell Text="Display a web page"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:DisplayWebPage}" />
+                <TextCell Text="Display a local HTML file"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:DisplayLocalWebPage}" />
+                <TextCell Text="Display local HTML"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:LocalHTMLPage}" />
+                <TextCell Text="Launch a web page in the system browser"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:LaunchBrowserPage}" />
+                <TextCell Text="Store a cookie"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:CookiePage}" />
+                <TextCell Text="Loading label"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:LoadingLabel}" />
+                <TextCell Text="WebView events"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:LinkToInApp}" />
+                <TextCell Text="Evaluate JavaScript"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:EvaluateJavaScriptPage}" />                
+            </TableSection>
+        </TableRoot>
+    </TableView>
+</ContentPage>
