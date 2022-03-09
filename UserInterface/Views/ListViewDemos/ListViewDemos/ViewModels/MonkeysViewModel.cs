@@ -10,10 +10,8 @@ namespace ListViewDemos.ViewModels
     {
         readonly IList<Monkey> source;
         Monkey selectedMonkey;
-        int selectionCount = 1;
 
         public ObservableCollection<Monkey> Monkeys { get; private set; }
-        public IList<Monkey> EmptyMonkeys { get; private set; }
 
         public Monkey SelectedMonkey
         {
@@ -30,41 +28,17 @@ namespace ListViewDemos.ViewModels
             }
         }
 
-        ObservableCollection<object> selectedMonkeys;
-        public ObservableCollection<object> SelectedMonkeys
-        {
-            get
-            {
-                return selectedMonkeys;
-            }
-            set
-            {
-                if (selectedMonkeys != value)
-                {
-                    selectedMonkeys = value;
-                }
-            }
-        }
-
-        public string SelectedMonkeyMessage { get; private set; }
-
         public ICommand DeleteCommand => new Command<Monkey>(RemoveMonkey);
         public ICommand FavoriteCommand => new Command<Monkey>(FavoriteMonkey);
-        public ICommand FilterCommand => new Command<string>(FilterItems);
-        public ICommand MonkeySelectionChangedCommand => new Command(MonkeySelectionChanged);
 
         public MonkeysViewModel()
         {
             source = new List<Monkey>();
             CreateMonkeyCollection();
 
-            selectedMonkey = Monkeys.Skip(3).FirstOrDefault();
-            MonkeySelectionChanged();
+            SelectedMonkey = Monkeys.Skip(3).FirstOrDefault();
+            OnPropertyChanged("SelectedMonkey");
 
-            SelectedMonkeys = new ObservableCollection<object>()
-            {
-                Monkeys[1], Monkeys[3], Monkeys[4]
-            };
         }
 
         void CreateMonkeyCollection()
@@ -206,32 +180,6 @@ namespace ListViewDemos.ViewModels
             });
 
             Monkeys = new ObservableCollection<Monkey>(source);
-        }
-
-        void FilterItems(string filter)
-        {
-            var filteredItems = source.Where(monkey => monkey.Name.ToLower().Contains(filter.ToLower())).ToList();
-            foreach (var monkey in source)
-            {
-                if (!filteredItems.Contains(monkey))
-                {
-                    Monkeys.Remove(monkey);
-                }
-                else
-                {
-                    if (!Monkeys.Contains(monkey))
-                    {
-                        Monkeys.Add(monkey);
-                    }
-                }
-            }
-        }
-
-        void MonkeySelectionChanged()
-        {
-            SelectedMonkeyMessage = $"Selection {selectionCount}: {SelectedMonkey.Name}";
-            OnPropertyChanged("SelectedMonkeyMessage");
-            selectionCount++;
         }
 
         void RemoveMonkey(Monkey monkey)
