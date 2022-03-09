@@ -6,20 +6,16 @@
     <StackLayout Margin="20">
         <ListView ItemsSource="{Binding Animals}"
                   IsGroupingEnabled="True">
-            <!--<ListView.GroupHeaderTemplate>
+            <ListView.GroupHeaderTemplate>
                 <DataTemplate>
-                    <Label Text="{Binding Name}"
-                           BackgroundColor="LightGray"
-                           FontSize="Large"
-                           FontAttributes="Bold" />
+                    <ViewCell>
+                        <Label Text="{Binding Name}"
+                               BackgroundColor="LightGray"
+                               FontSize="Large"
+                               FontAttributes="Bold" />
+                    </ViewCell>
                 </DataTemplate>
-            </ListView.GroupHeaderTemplate>-->
-            <!--<ListView.FooterTemplate>
-                <DataTemplate>
-                    <Label Text="{Binding Count, StringFormat='Total animals: {0:D}'}"
-                           Margin="0,0,0,10" />
-                </DataTemplate>
-            </ListView.FooterTemplate>-->
+            </ListView.GroupHeaderTemplate>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
