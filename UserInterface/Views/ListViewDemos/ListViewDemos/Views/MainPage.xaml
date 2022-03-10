@@ -18,6 +18,9 @@
                 <TextCell Text="ListView selection"
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type views:SelectionPage}" />
+                <TextCell Text="Runtime row sizing"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type views:RuntimeItemSizingPage}" />
                 <TextCell Text="ListView grouping"
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type views:GroupingPage}" />
