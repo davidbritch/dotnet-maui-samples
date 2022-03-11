@@ -5,12 +5,12 @@
              Title="Image cell page">
     <TableView Intent="Menu">
         <TableRoot>
-            <TableSection Title="Learn how to use your XBox">
+            <TableSection Title="Learn how to use your Xbox">
                 <ImageCell Text="1. Introduction"
-                           Detail="Learn about your XBox and its capabilities."
+                           Detail="Learn about your Xbox and its capabilities."
                            ImageSource="xbox.png" />
                 <ImageCell Text="2. Turn it on"
-                           Detail="Learn how to turn on your XBox."
+                           Detail="Learn how to turn on your Xbox."
                            ImageSource="xbox.png" />
                 <ImageCell Text="3. Connect your controller"
                            Detail="Learn how to connect your wireless controller."
