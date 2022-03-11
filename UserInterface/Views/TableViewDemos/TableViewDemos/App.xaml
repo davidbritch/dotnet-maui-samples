@@ -1,0 +1,12 @@
+﻿<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TableViewDemos"
+             x:Class="TableViewDemos.App">
+    <Application.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="RowSpacing" Value="6" />
+            <Setter Property="ColumnSpacing" Value="6" />
+        </Style>
+        
+    </Application.Resources>
+</Application>
