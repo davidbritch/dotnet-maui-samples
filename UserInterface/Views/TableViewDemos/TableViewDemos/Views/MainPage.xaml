@@ -18,6 +18,9 @@
                 <TextCell Text="Data page"
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type views:DataIntentPage}" />
+                <TextCell Text="ImageCell page"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type views:ImageCellPage}" />
                 <TextCell Text="Right to left TableView"
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type views:RightToLeftTablePage}" />

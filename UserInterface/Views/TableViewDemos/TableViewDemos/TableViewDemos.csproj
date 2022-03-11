@@ -54,6 +54,7 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\dotnet_bot.png" />
+	  <None Remove="Resources\Images\xbox.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -76,6 +77,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\FormIntentPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ImageCellPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\MenuIntentPage.xaml">
