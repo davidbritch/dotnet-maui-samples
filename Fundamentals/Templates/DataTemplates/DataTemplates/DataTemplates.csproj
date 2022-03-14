@@ -58,7 +58,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\XAML\PersonCell.xaml">
+	  <Compile Update="Views\XAML\PersonView.xaml.cs">
+	    <DependentUpon>PersonView.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\XAML\PersonView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\XAML\WithDataTemplatePage.xaml">

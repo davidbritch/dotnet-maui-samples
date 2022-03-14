@@ -1,8 +1,8 @@
 ﻿namespace DataTemplates
 {
-    public partial class PersonCell : ViewCell
+    public partial class PersonView : ContentView
     {
-        public PersonCell()
+        public PersonView()
         {
             InitializeComponent();
         }
