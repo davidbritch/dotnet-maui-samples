@@ -25,7 +25,7 @@ namespace AbsoluteLayoutDemos.Views.Code
                     button
                 }
             };
-            AbsoluteLayout.SetLayoutBounds(stackLayout, new Rectangle(0, 0, 1, 1));
+            AbsoluteLayout.SetLayoutBounds(stackLayout, new Rect(0, 0, 1, 1));
             AbsoluteLayout.SetLayoutFlags(stackLayout, AbsoluteLayoutFlags.All);
 
             progressBar = new ProgressBar
@@ -40,7 +40,7 @@ namespace AbsoluteLayoutDemos.Views.Code
                 IsVisible = false,
                 Content = progressBar
             };
-            AbsoluteLayout.SetLayoutBounds(overlay, new Rectangle(0, 0, 1, 1));
+            AbsoluteLayout.SetLayoutBounds(overlay, new Rect(0, 0, 1, 1));
             AbsoluteLayout.SetLayoutFlags(overlay, AbsoluteLayoutFlags.All);
 
             AbsoluteLayout absoluteLayout = new AbsoluteLayout

@@ -25,11 +25,11 @@ namespace ControlGallery.Views.XAML
                 double offset = 1 - Math.Abs((seconds % 2) - 1);
 
                 AbsoluteLayout.SetLayoutBounds(text1,
-                    new Rectangle(offset, offset,
+                    new Rect(offset, offset,
                         AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
 
                 AbsoluteLayout.SetLayoutBounds(text2,
-                    new Rectangle(1 - offset, offset,
+                    new Rect(1 - offset, offset,
                         AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
 
                 return isCurrentPage;

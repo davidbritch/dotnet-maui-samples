@@ -17,22 +17,22 @@ namespace RelativeLayoutDemos.Views.Code
             relativeLayout.Children.Add(new BoxView
             {
                 Color = Colors.Silver
-            }, () => new Rectangle(0, 10, 200, 5));
+            }, () => new Rect(0, 10, 200, 5));
 
             relativeLayout.Children.Add(new BoxView
             {
                 Color = Colors.Silver
-            }, () => new Rectangle(0, 20, 200, 5));
+            }, () => new Rect(0, 20, 200, 5));
 
             relativeLayout.Children.Add(new BoxView
             {
                 Color = Colors.Silver
-            }, () => new Rectangle(10, 0, 5, 65));
+            }, () => new Rect(10, 0, 5, 65));
 
             relativeLayout.Children.Add(new BoxView
             {
                 Color = Colors.Silver
-            }, () => new Rectangle(20, 0, 5, 65));
+            }, () => new Rect(20, 0, 5, 65));
 
             relativeLayout.Children.Add(new Label
             {

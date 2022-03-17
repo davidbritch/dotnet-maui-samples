@@ -5,7 +5,7 @@ namespace GraphicsViewDemos.Drawables
 {
     internal class PatternPaintDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             IPattern pattern;
 
@@ -23,7 +23,7 @@ namespace GraphicsViewDemos.Drawables
             {
                 Pattern = pattern
             };
-            canvas.SetFillPaint(patternPaint, RectangleF.Zero);
+            canvas.SetFillPaint(patternPaint, RectF.Zero);
             canvas.FillRectangle(10, 10, 250, 250);
         }
     }

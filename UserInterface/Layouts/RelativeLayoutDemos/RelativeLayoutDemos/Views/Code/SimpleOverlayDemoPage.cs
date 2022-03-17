@@ -42,7 +42,7 @@ namespace RelativeLayoutDemos.Views.Code
 
             RelativeLayout relativeLayout = new RelativeLayout();
             relativeLayout.Children.Add(stackLayout, () => 0, () => 0);
-            relativeLayout.Children.Add(overlay, () => new Rectangle(0, 0, relativeLayout.Width, relativeLayout.Height));
+            relativeLayout.Children.Add(overlay, () => new Rect(0, 0, relativeLayout.Width, relativeLayout.Height));
 
             Title = "Simple overlay demo";
             Content = relativeLayout;

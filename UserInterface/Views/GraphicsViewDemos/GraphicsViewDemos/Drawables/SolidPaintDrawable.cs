@@ -5,7 +5,7 @@ namespace GraphicsViewDemos.Drawables
 {
     internal class SolidPaintDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             SolidPaint solidPaint = new SolidPaint(Colors.Silver);
 
@@ -14,7 +14,7 @@ namespace GraphicsViewDemos.Drawables
             //    Color = Colors.Silver
             //};
 
-            RectangleF solidRectangle = new RectangleF(100, 100, 200, 100);
+            RectF solidRectangle = new RectF(100, 100, 200, 100);
             canvas.SetFillPaint(solidPaint, solidRectangle);
             canvas.SetShadow(new SizeF(10, 10), 10, Colors.Grey);
             canvas.FillRoundedRectangle(solidRectangle, 12);

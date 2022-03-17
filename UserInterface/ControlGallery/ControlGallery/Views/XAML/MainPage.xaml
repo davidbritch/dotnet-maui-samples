@@ -31,10 +31,6 @@
                           Detail="Initiate a command"
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type views:ButtonDemoPage}" />
-                <TextCell Text="CarouselPage"
-                          Detail="Present a horizontally scrollable page"
-                          Command="{Binding NavigateCommand}"
-                          CommandParameter="{x:Type views:CarouselPageDemoPage}" />
                 <TextCell Text="CarouselView"
                           Detail="Present data in a carousel layout"
                           Command="{Binding NavigateCommand}"
@@ -257,10 +253,6 @@
                           Detail="Initiate a command"
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type codeViews:ButtonDemoPage}" />
-                <TextCell Text="CarouselPage"
-                          Detail="Present a horizontally scrollable page"
-                          Command="{Binding NavigateCommand}"
-                          CommandParameter="{x:Type codeViews:CarouselPageDemoPage}" />
                 <TextCell Text="CarouselView"
                           Detail="Present data in a carousel layout"
                           Command="{Binding NavigateCommand}"

@@ -49,7 +49,7 @@ public partial class BoxViewClockPage : ContentPage
             double radians = index * 2 * Math.PI / tickMarks.Length;
             double x = center.X + radius * Math.Sin(radians) - size / 2;
             double y = center.Y - radius * Math.Cos(radians) - size / 2;
-            AbsoluteLayout.SetLayoutBounds(tickMarks[index], new Rectangle(x, y, size, size));
+            AbsoluteLayout.SetLayoutBounds(tickMarks[index], new Rect(x, y, size, size));
             tickMarks[index].Rotation = 180 * radians / Math.PI;
         }
 
@@ -66,9 +66,9 @@ public partial class BoxViewClockPage : ContentPage
         double offset = handParams.Offset;
 
         AbsoluteLayout.SetLayoutBounds(boxView,
-            new Rectangle(center.X - 0.5 * width,
-                          center.Y - offset * height,
-                          width, height));
+            new Rect(center.X - 0.5 * width,
+                     center.Y - offset * height,
+                     width, height));
 
         // Set the AnchorY property for rotations.
         boxView.AnchorY = handParams.Offset;

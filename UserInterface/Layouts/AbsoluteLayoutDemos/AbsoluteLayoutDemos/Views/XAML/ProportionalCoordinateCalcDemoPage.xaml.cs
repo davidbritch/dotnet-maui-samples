@@ -11,22 +11,22 @@ namespace AbsoluteLayoutDemos.Views.XAML
         {
             InitializeComponent();
 
-            Rectangle[] fractionalRects =
+            Rect[] fractionalRects =
             {
-                new Rectangle(0.05, 0.1, 0.90, 0.1),    // outer top
-                new Rectangle(0.05, 0.8, 0.90, 0.1),    // outer bottom
-                new Rectangle(0.05, 0.1, 0.05, 0.8),    // outer left
-                new Rectangle(0.90, 0.1, 0.05, 0.8),    // outer right
+                new Rect(0.05, 0.1, 0.90, 0.1),    // outer top
+                new Rect(0.05, 0.8, 0.90, 0.1),    // outer bottom
+                new Rect(0.05, 0.1, 0.05, 0.8),    // outer left
+                new Rect(0.90, 0.1, 0.05, 0.8),    // outer right
 
-                new Rectangle(0.15, 0.3, 0.70, 0.1),    // inner top
-                new Rectangle(0.15, 0.6, 0.70, 0.1),    // inner bottom
-                new Rectangle(0.15, 0.3, 0.05, 0.4),    // inner left
-                new Rectangle(0.80, 0.3, 0.05, 0.4),    // inner right
+                new Rect(0.15, 0.3, 0.70, 0.1),    // inner top
+                new Rect(0.15, 0.6, 0.70, 0.1),    // inner bottom
+                new Rect(0.15, 0.3, 0.05, 0.4),    // inner left
+                new Rect(0.80, 0.3, 0.05, 0.4),    // inner right
             };
 
-            foreach(Rectangle fractionalRect in fractionalRects)
+            foreach(Rect fractionalRect in fractionalRects)
             {
-                Rectangle layoutBounds = new Rectangle
+                Rect layoutBounds = new Rect
                 {
                     // Proportional coordinate calculations
                     X = fractionalRect.X / (1 - fractionalRect.Width),

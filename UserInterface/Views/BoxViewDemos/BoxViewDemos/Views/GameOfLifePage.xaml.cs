@@ -84,10 +84,10 @@ public partial class GameOfLifePage : ContentPage
                 lifeCell.Row = y;
                 lifeCell.IsAlive = lifeGrid.IsAlive(x, y);
 
-                Rectangle rect = new Rectangle(x * cellSize + xMargin + CellSpacing / 2,
-                                               y * cellSize + yMargin + CellSpacing / 2,
-                                               cellSize - CellSpacing,
-                                               cellSize - CellSpacing);
+                Rect rect = new Rect(x * cellSize + xMargin + CellSpacing / 2,
+                                     y * cellSize + yMargin + CellSpacing / 2,
+                                     cellSize - CellSpacing,
+                                     cellSize - CellSpacing);
 
                 AbsoluteLayout.SetLayoutBounds(lifeCell, rect);
                 index++;

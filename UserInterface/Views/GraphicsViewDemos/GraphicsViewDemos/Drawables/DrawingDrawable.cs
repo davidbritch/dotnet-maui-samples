@@ -9,7 +9,7 @@ namespace GraphicsViewDemos.Drawables
 {
     internal class LineDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             canvas.StrokeColor = Colors.Red;
             canvas.StrokeSize = 6;
@@ -20,7 +20,7 @@ namespace GraphicsViewDemos.Drawables
 
     internal class EllipseDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             canvas.StrokeColor = Colors.Red;
             canvas.StrokeSize = 4;
@@ -30,7 +30,7 @@ namespace GraphicsViewDemos.Drawables
 
     internal class FilledEllipseDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             canvas.FillColor = Colors.Red;
             canvas.FillEllipse(10, 10, 100, 50);
@@ -39,7 +39,7 @@ namespace GraphicsViewDemos.Drawables
 
     internal class CircleDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             canvas.StrokeColor = Colors.Red;
             canvas.StrokeSize = 4;
@@ -49,7 +49,7 @@ namespace GraphicsViewDemos.Drawables
 
     internal class RectangleDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             canvas.StrokeColor = Colors.DarkBlue;
             canvas.StrokeSize = 4;
@@ -59,7 +59,7 @@ namespace GraphicsViewDemos.Drawables
 
     internal class SquareDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             canvas.StrokeColor = Colors.DarkBlue;
             canvas.StrokeSize = 4;
@@ -69,7 +69,7 @@ namespace GraphicsViewDemos.Drawables
 
     internal class FilledRectangleDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             canvas.FillColor = Colors.DarkBlue;
             canvas.FillRectangle(10, 10, 100, 50);
@@ -78,7 +78,7 @@ namespace GraphicsViewDemos.Drawables
 
     internal class RoundedRectangleDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             canvas.StrokeColor = Colors.Green;
             canvas.StrokeSize = 4;
@@ -88,7 +88,7 @@ namespace GraphicsViewDemos.Drawables
 
     internal class FilledRoundedRectangleDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             canvas.FillColor = Colors.Green;
             canvas.FillRoundedRectangle(10, 10, 100, 50, 12);
@@ -97,7 +97,7 @@ namespace GraphicsViewDemos.Drawables
 
     internal class ArcDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             canvas.StrokeColor = Colors.Teal;
             canvas.StrokeSize = 4;
@@ -107,7 +107,7 @@ namespace GraphicsViewDemos.Drawables
 
     internal class FilledArcDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             canvas.FillColor = Colors.Teal;
             canvas.FillArc(10, 10, 100, 100, 0, 180, true);
@@ -116,7 +116,7 @@ namespace GraphicsViewDemos.Drawables
 
     internal class PathDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             PathF path = new PathF();
             path.MoveTo(40, 10);
@@ -131,7 +131,7 @@ namespace GraphicsViewDemos.Drawables
 
     internal class FilledPathDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             PathF path = new PathF();
             path.MoveTo(40, 10);
@@ -144,7 +144,7 @@ namespace GraphicsViewDemos.Drawables
 
     internal class ImageDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             IImage image;
             Assembly assembly = GetType().GetTypeInfo().Assembly;
@@ -162,7 +162,7 @@ namespace GraphicsViewDemos.Drawables
 
     internal class StringDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             canvas.FontColor = Colors.Blue;
             canvas.FontSize = 18;
@@ -184,7 +184,7 @@ namespace GraphicsViewDemos.Drawables
 
     internal class AttributedTextDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             //canvas.FontName = "Arial";
             //canvas.FontSize = 18;
@@ -198,7 +198,7 @@ namespace GraphicsViewDemos.Drawables
 
     internal class FillAndStrokeDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             float radius = Math.Min(dirtyRect.Width, dirtyRect.Height) / 4;
 
@@ -216,7 +216,7 @@ namespace GraphicsViewDemos.Drawables
 
     internal class ShadowDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             canvas.FillColor = Colors.Red;
             canvas.SetShadow(new SizeF(10, 10), 4, Colors.Grey);
@@ -234,7 +234,7 @@ namespace GraphicsViewDemos.Drawables
 
     internal class RegularDashedObjectDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             canvas.StrokeColor = Colors.Red;
             canvas.StrokeSize = 4;
@@ -245,7 +245,7 @@ namespace GraphicsViewDemos.Drawables
 
     internal class IrregularDashedObjectDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             canvas.StrokeColor = Colors.Red;
             canvas.StrokeSize = 4;
@@ -256,7 +256,7 @@ namespace GraphicsViewDemos.Drawables
 
     internal class LineEndsDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             canvas.StrokeSize = 10;
             canvas.StrokeColor = Colors.Red;
@@ -267,7 +267,7 @@ namespace GraphicsViewDemos.Drawables
 
     internal class LineJoinsDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             PathF path = new PathF();
             path.MoveTo(10, 10);
@@ -283,7 +283,7 @@ namespace GraphicsViewDemos.Drawables
 
     internal class ClippingDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             IImage image;
             var assembly = GetType().GetTypeInfo().Assembly;
@@ -304,7 +304,7 @@ namespace GraphicsViewDemos.Drawables
 
     internal class SubtractClippingDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             IImage image;
             var assembly = GetType().GetTypeInfo().Assembly;

@@ -4,7 +4,7 @@ namespace Microsoft.Maui.Controls
 {
     public static class AbsoluteLayoutExtensions
     {
-        public static void Add(this AbsoluteLayout absoluteLayout, IView view, Rectangle bounds, AbsoluteLayoutFlags flags = AbsoluteLayoutFlags.None)
+        public static void Add(this AbsoluteLayout absoluteLayout, IView view, Rect bounds, AbsoluteLayoutFlags flags = AbsoluteLayoutFlags.None)
         {
             if (view == null)
                 throw new ArgumentNullException(nameof(view));
@@ -24,7 +24,7 @@ namespace Microsoft.Maui.Controls
                 throw new ArgumentNullException(nameof(position));
 
             absoluteLayout.Add(view);
-            absoluteLayout.SetLayoutBounds(view, new Rectangle(position.X, position.Y, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
+            absoluteLayout.SetLayoutBounds(view, new Rect(position.X, position.Y, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
         }
     }
 }

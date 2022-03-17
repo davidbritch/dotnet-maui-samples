@@ -5,7 +5,7 @@ namespace GraphicsViewDemos.Drawables
 {
     internal class EvenOddWindingModeDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             float radius = 0.45f * Math.Min(dirtyRect.Width, dirtyRect.Height);
 

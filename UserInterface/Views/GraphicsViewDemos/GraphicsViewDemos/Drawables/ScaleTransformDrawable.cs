@@ -5,7 +5,7 @@ namespace GraphicsViewDemos.Drawables
 {
     internal class ScaleTransformDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             canvas.StrokeColor = Colors.Red;
             canvas.StrokeSize = 4;

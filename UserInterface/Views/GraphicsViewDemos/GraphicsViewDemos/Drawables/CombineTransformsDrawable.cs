@@ -5,7 +5,7 @@ namespace GraphicsViewDemos.Drawables
 {
     internal class CombineTransformsDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             canvas.StrokeLineCap = LineCap.Round;
             canvas.FillColor = Colors.Gray;

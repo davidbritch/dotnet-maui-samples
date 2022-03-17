@@ -5,7 +5,7 @@ namespace GraphicsViewDemos.Drawables
 {
     internal class RotateTransformDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             canvas.FontColor = Colors.Blue;
             canvas.FontSize = 18;

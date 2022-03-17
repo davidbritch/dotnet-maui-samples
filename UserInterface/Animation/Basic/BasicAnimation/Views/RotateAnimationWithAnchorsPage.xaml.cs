@@ -15,7 +15,7 @@
             center = new Point(absoluteLayout.Width / 2, absoluteLayout.Height / 2);
             radius = Math.Min(absoluteLayout.Width, absoluteLayout.Height) / 2;
             AbsoluteLayout.SetLayoutBounds(image,
-                new Rectangle(center.X - image.Width / 2, center.Y - radius, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
+                new Rect(center.X - image.Width / 2, center.Y - radius, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
         }
 
 		async void OnImageTapped(object sender, EventArgs e)

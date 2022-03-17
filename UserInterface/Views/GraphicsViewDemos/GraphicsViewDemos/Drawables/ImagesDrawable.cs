@@ -7,7 +7,7 @@ namespace GraphicsViewDemos.Drawables
 {
     internal class LoadImageDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             IImage image;
             Assembly assembly = GetType().GetTypeInfo().Assembly;
@@ -25,7 +25,7 @@ namespace GraphicsViewDemos.Drawables
 
     internal class ResizeImageDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             //IImage image;
             //Assembly assembly = GetType().GetTypeInfo().Assembly;
@@ -44,7 +44,7 @@ namespace GraphicsViewDemos.Drawables
 
     internal class DownsizeImageDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             IImage image;
             Assembly assembly = GetType().GetTypeInfo().Assembly;
@@ -63,7 +63,7 @@ namespace GraphicsViewDemos.Drawables
 
     internal class SaveImageDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             IImage image;
             Assembly assembly = GetType().GetTypeInfo().Assembly;

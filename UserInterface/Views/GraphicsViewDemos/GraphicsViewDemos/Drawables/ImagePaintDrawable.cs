@@ -6,7 +6,7 @@ namespace GraphicsViewDemos.Drawables
 {
     internal class ImagePaintDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             IImage image;
             var assembly = GetType().GetTypeInfo().Assembly;
@@ -21,7 +21,7 @@ namespace GraphicsViewDemos.Drawables
             //    {
             //        Image = image.Downsize(100)
             //    };
-            //    canvas.SetFillPaint(imagePaint, RectangleF.Zero);
+            //    canvas.SetFillPaint(imagePaint, RectF.Zero);
             //    canvas.FillRectangle(0, 0, 240, 300);
             //}
 

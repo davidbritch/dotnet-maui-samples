@@ -5,7 +5,7 @@ namespace GraphicsViewDemos.Drawables
 {
     internal class BlendModesDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             PointF center = new PointF(dirtyRect.Center.X, dirtyRect.Center.Y);
             float radius = Math.Min(dirtyRect.Width, dirtyRect.Height) / 4;

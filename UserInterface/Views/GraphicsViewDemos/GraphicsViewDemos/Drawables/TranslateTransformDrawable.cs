@@ -5,7 +5,7 @@ namespace GraphicsViewDemos.Drawables
 {
     internal class TranslateTransformDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             PathF path = new PathF();
             for (int i = 0; i < 11; i++)

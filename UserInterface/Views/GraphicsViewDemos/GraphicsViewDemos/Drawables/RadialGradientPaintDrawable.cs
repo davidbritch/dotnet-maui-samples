@@ -4,7 +4,7 @@ namespace GraphicsViewDemos.Drawables
 {
     internal class CenteredRadialGradientPaintDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             RadialGradientPaint radialGradientPaint = new RadialGradientPaint
             {
@@ -14,7 +14,7 @@ namespace GraphicsViewDemos.Drawables
                 // Radius is already 0.5
             };
 
-            RectangleF radialRectangle = new RectangleF(10, 10, 200, 100);
+            RectF radialRectangle = new RectF(10, 10, 200, 100);
             canvas.SetFillPaint(radialGradientPaint, radialRectangle);
             canvas.SetShadow(new SizeF(10, 10), 10, Colors.Grey);
             canvas.FillRoundedRectangle(radialRectangle, 12);
@@ -23,7 +23,7 @@ namespace GraphicsViewDemos.Drawables
 
     internal class TopLeftRadialGradientPaintDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             RadialGradientPaint radialGradientPaint = new RadialGradientPaint
             {
@@ -33,7 +33,7 @@ namespace GraphicsViewDemos.Drawables
                 // Radius is already 0.5
             };
 
-            RectangleF radialRectangle = new RectangleF(10, 10, 200, 100);
+            RectF radialRectangle = new RectF(10, 10, 200, 100);
             canvas.SetFillPaint(radialGradientPaint, radialRectangle);
             canvas.SetShadow(new SizeF(10, 10), 10, Colors.Grey);
             canvas.FillRoundedRectangle(radialRectangle, 12);
@@ -42,7 +42,7 @@ namespace GraphicsViewDemos.Drawables
 
     internal class BottomRightRadialGradientPaintDrawable : IDrawable
     {
-        public void Draw(ICanvas canvas, RectangleF dirtyRect)
+        public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             RadialGradientPaint radialGradientPaint = new RadialGradientPaint
             {
@@ -52,7 +52,7 @@ namespace GraphicsViewDemos.Drawables
                 // Radius is already 0.5
             };
 
-            RectangleF radialRectangle = new RectangleF(10, 10, 200, 100);
+            RectF radialRectangle = new RectF(10, 10, 200, 100);
             canvas.SetFillPaint(radialGradientPaint, radialRectangle);
             canvas.SetShadow(new SizeF(10, 10), 10, Colors.Grey);
             canvas.FillRoundedRectangle(radialRectangle, 12);

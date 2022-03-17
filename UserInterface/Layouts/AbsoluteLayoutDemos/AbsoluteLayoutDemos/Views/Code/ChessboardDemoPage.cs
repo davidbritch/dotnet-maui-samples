@@ -35,7 +35,7 @@ namespace AbsoluteLayoutDemos.Views.Code
                     };
 
                     // x, y, width, height
-                    Rectangle rect = new Rectangle(col / 7.0, row / 7.0, 1 / 8.0, 1 / 8.0);
+                    Rect rect = new Rect(col / 7.0, row / 7.0, 1 / 8.0, 1 / 8.0);
 
                     absoluteLayout.Add(boxView, rect, AbsoluteLayoutFlags.All);
                 }

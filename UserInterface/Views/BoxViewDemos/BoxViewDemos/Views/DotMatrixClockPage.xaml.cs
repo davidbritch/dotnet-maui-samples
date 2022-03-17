@@ -90,7 +90,7 @@ public partial class DotMatrixClockPage : ContentPage
                     // Create the digit BoxView and add to layout.
                     BoxView boxView = new BoxView();
                     digitBoxViews[digit, row, col] = boxView;
-                    absoluteLayout.Add(boxView, new Rectangle(x, y, width, height), AbsoluteLayoutFlags.All);
+                    absoluteLayout.Add(boxView, new Rect(x, y, width, height), AbsoluteLayoutFlags.All);
                     y += yIncrement;
                 }
                 x += xIncrement;
@@ -114,7 +114,7 @@ public partial class DotMatrixClockPage : ContentPage
                             Color = colonPattern[row, col] == 1 ?
                                             colorOn : colorOff
                         };
-                        absoluteLayout.Add(boxView, new Rectangle(x, y, width, height), AbsoluteLayoutFlags.All);
+                        absoluteLayout.Add(boxView, new Rect(x, y, width, height), AbsoluteLayoutFlags.All);
                         y += yIncrement;
                     }
                     x += xIncrement;
