@@ -4,13 +4,13 @@ using System.Diagnostics;
 namespace ButtonDemos
 {
     public partial class PressAndReleaseButtonPage : ContentPage
-	{
+    {
         IDispatcherTimer timer;
         Stopwatch stopwatch = new Stopwatch();
 
-		public PressAndReleaseButtonPage ()
-		{
-			InitializeComponent ();
+        public PressAndReleaseButtonPage()
+        {
+            InitializeComponent();
 
             timer = Dispatcher.CreateTimer();
             timer.Interval = TimeSpan.FromMilliseconds(16);
