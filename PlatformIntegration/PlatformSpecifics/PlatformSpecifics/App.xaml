@@ -1,0 +1,31 @@
+﻿<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls" 
+             xmlns:androidAppCompat="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific.AppCompat;assembly=Microsoft.Maui.Controls"         
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             xmlns:windows="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;assembly=Microsoft.Maui.Controls"
+             x:Class="PlatformSpecifics.App"
+             android:Application.WindowSoftInputModeAdjust="Resize" 
+             androidAppCompat:Application.SendDisappearingEventOnPause="false" 
+             androidAppCompat:Application.SendAppearingEventOnResume="false" 
+             androidAppCompat:Application.ShouldPreserveKeyboardOnResume="false"
+             ios:Application.PanGestureRecognizerShouldRecognizeSimultaneously="true"
+             ios:Application.EnableAccessibilityScalingForNamedFontSizes="false"
+             windows:Application.ImageDirectory="Assets">
+    <!-- Add the following to direct control layout/rendering updates to the main thread on iOS:
+            
+            ios:Application.HandleControlUpdatesOnMainThread="true"
+    
+         This should rarely be needed, but in some cases may prevent crashes. -->
+
+    <Application.Resources>
+        <Style TargetType="StackLayout">
+            <Setter Property="Spacing" Value="6" />
+        </Style>
+        <Style TargetType="Grid">
+            <Setter Property="RowSpacing" Value="6" />
+            <Setter Property="ColumnSpacing" Value="6" />
+        </Style>
+    </Application.Resources>
+</Application>
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"
+             x:Class="PlatformSpecifics.AndroidImageButtonPage"
+             Title="Android ImageButton">
+    <StackLayout Margin="20">
+       <ImageButton Source="XamarinLogo.png"
+                    Clicked="OnImageButtonClicked"
+                    BackgroundColor="GhostWhite"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    android:ImageButton.IsShadowEnabled="true"
+                    android:ImageButton.ShadowColor="Gray"
+                    android:ImageButton.ShadowRadius="12">
+            <android:ImageButton.ShadowOffset>
+                <Size>
+                    <x:Arguments>
+                        <x:Double>10</x:Double>
+                        <x:Double>10</x:Double>
+                    </x:Arguments>
+                </Size>
+            </android:ImageButton.ShadowOffset>
+        </ImageButton>
+        <Label Text="Tap the ImageButton to toggle the shadow effect."
+               FontSize="Medium"
+               HorizontalOptions="Center" />
+    </StackLayout>
+</ContentPage>

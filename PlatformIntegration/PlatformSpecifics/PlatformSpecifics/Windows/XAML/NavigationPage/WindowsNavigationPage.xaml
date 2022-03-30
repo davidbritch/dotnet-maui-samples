@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NavigationPage x:Name="page" 
+                xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:windows="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;assembly=Microsoft.Maui.Controls"
+                x:Class="PlatformSpecifics.WindowsNavigationPage"
+                windows:Page.ToolbarPlacement="Bottom">
+  <NavigationPage.ToolbarItems>
+    <ToolbarItem Text="Primary 1" IconImageSource="reminders.png" Order="Primary" Clicked="OnToolbarItemClicked" />
+    <ToolbarItem Text="Primary 2" IconImageSource="reminders.png" Order="Primary" Clicked="OnToolbarItemClicked" />
+    <ToolbarItem Text="Secondary 1" IconImageSource="reminders.png" Order="Secondary" Clicked="OnToolbarItemClicked" />
+    <ToolbarItem Text="Secondary 2" IconImageSource="reminders.png" Order="Secondary" Clicked="OnToolbarItemClicked" />
+  </NavigationPage.ToolbarItems>
+</NavigationPage>
