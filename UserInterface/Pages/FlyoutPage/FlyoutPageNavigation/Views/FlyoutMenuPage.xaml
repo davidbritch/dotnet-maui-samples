@@ -6,9 +6,10 @@
              Padding="0,40,0,0"
              IconImageSource="hamburger.png"
              Title="Personal Organiser">
-    <ListView x:Name="listView" 
-                  x:FieldModifier="public">
-        <ListView.ItemsSource>
+    <CollectionView x:Name="collectionView" 
+                    x:FieldModifier="public"
+                    SelectionMode="Single">
+        <CollectionView.ItemsSource>
             <x:Array Type="{x:Type local:FlyoutPageItem}">
                 <local:FlyoutPageItem Title="Contacts" 
                                       IconSource="contacts.png" 
@@ -20,21 +21,23 @@
                                       IconSource="reminders.png" 
                                       TargetType="{x:Type local:ReminderPage}" />
             </x:Array>
-        </ListView.ItemsSource>
-        <ListView.ItemTemplate>
+        </CollectionView.ItemsSource>
+        <CollectionView.ItemTemplate>
             <DataTemplate>
-                <ViewCell>
-                    <Grid Padding="5,10">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="30"/>
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Image Source="{Binding IconSource}" />
-                        <Label Grid.Column="1" 
-                               Text="{Binding Title}" />
-                    </Grid>
-                </ViewCell>
+                <Grid Padding="5,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Source="{Binding IconSource}" />
+                    <Label Grid.Column="1"
+                           Margin="20,0"
+                           Text="{Binding Title}"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           VerticalOptions="Center" />
+                </Grid>
             </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
 </ContentPage>

@@ -6,16 +6,15 @@ public partial class MainPage : FlyoutPage
 	{
 		InitializeComponent();
 
-        flyoutPage.listView.ItemSelected += OnItemSelected;
+        flyoutPage.collectionView.SelectionChanged += OnSelectionChanged;
     }
 
-    void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+    void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-        var item = e.SelectedItem as FlyoutPageItem;
+        var item = e.CurrentSelection.FirstOrDefault() as FlyoutPageItem;
         if (item != null)
-        {
+        {            
             Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
-            flyoutPage.listView.SelectedItem = null;
             IsPresented = false;
         }
     }
