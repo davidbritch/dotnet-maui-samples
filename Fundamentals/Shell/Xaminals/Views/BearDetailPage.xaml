@@ -5,17 +5,17 @@
              Title="Bear Details">
     <ScrollView>
         <StackLayout Margin="20">
-            <Label Text="{Binding Name}" 
+            <Label Text="{Binding Bear.Name}" 
                    HorizontalOptions="Center" 
                    Style="{DynamicResource TitleStyle}" />
-            <Label Text="{Binding Location}" 
+            <Label Text="{Binding Bear.Location}" 
                    FontAttributes="Italic" 
                    HorizontalOptions="Center" />
-            <Image Source="{Binding ImageUrl}" 
+            <Image Source="{Binding Bear.ImageUrl}" 
                    HeightRequest="200" 
                    WidthRequest="200" 
                    HorizontalOptions="CenterAndExpand" />
-            <Label Text="{Binding Details}" 
+            <Label Text="{Binding Bear.Details}" 
                    Style="{DynamicResource BodyStyle}" />
         </StackLayout>
     </ScrollView>

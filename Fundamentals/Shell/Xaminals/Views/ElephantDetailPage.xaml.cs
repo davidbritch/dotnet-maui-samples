@@ -1,35 +1,28 @@
-﻿using Xaminals.Data;
-using Xaminals.Models;
+﻿using Xaminals.Models;
 
 namespace Xaminals.Views
 {
     [QueryProperty(nameof(Name), "name")]
+    [QueryProperty(nameof(Elephant), "Elephant")]
     public partial class ElephantDetailPage : ContentPage
     {
-        public string Name
+        public string Name { get; set; }
+
+        Animal elephant;
+        public Animal Elephant
         {
+            get => elephant;
             set
             {
-                LoadAnimal(value);
+                elephant = value;
+                OnPropertyChanged();
             }
         }
 
         public ElephantDetailPage()
         {
             InitializeComponent();
-        }
-
-        void LoadAnimal(string name)
-        {
-            try
-            {
-                Animal animal = ElephantData.Elephants.FirstOrDefault(a => a.Name == name);
-                BindingContext = animal;
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Failed to load animal.");
-            }
+            BindingContext = this;
         }
     }
 }

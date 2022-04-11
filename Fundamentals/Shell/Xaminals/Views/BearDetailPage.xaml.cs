@@ -1,35 +1,25 @@
-﻿using Xaminals.Data;
-using Xaminals.Models;
+﻿using Xaminals.Models;
 
 namespace Xaminals.Views
 {
-    [QueryProperty(nameof(Name), "name")]
+    [QueryProperty(nameof(Bear), "Bear")]
     public partial class BearDetailPage : ContentPage
     {
-        public string Name
+        Animal bear;
+        public Animal Bear
         {
+            get => bear;
             set
             {
-                LoadAnimal(value);
+                bear = value;
+                OnPropertyChanged();
             }
         }
 
         public BearDetailPage()
         {
             InitializeComponent();
-        }
-
-        void LoadAnimal(string name)
-        {
-            try
-            {
-                Animal animal = BearData.Bears.FirstOrDefault(a => a.Name == name);
-                BindingContext = animal;
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Failed to load animal.");
-            }
+            BindingContext = this;
         }
     }
 }

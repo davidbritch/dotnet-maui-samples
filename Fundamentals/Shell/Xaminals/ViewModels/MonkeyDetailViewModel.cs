@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Web;
-using Xaminals.Data;
 using Xaminals.Models;
 
 namespace Xaminals.ViewModels
@@ -12,22 +11,8 @@ namespace Xaminals.ViewModels
 
         public void ApplyQueryAttributes(IDictionary<string, object> query)
         {
-            // Only a single query parameter is passed, which needs URL decoding.
-            //string name = HttpUtility.UrlDecode(query["name"]);
-            string name = string.Empty;
-            LoadAnimal(name);
-        }
-        void LoadAnimal(string name)
-        {
-            try
-            {
-                Monkey = MonkeyData.Monkeys.FirstOrDefault(a => a.Name == name);
-                OnPropertyChanged("Monkey");
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Failed to load animal.");
-            }
+            Monkey = query["Monkey"] as Animal;
+            OnPropertyChanged("Monkey");
         }
 
         #region INotifyPropertyChanged

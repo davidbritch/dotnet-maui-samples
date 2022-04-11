@@ -5,17 +5,17 @@
              Title="Elephant Details">
     <ScrollView>
         <StackLayout Margin="20">
-            <Label Text="{Binding Name}" 
+            <Label Text="{Binding Elephant.Name}" 
                    HorizontalOptions="Center" 
                    Style="{DynamicResource TitleStyle}" />
-            <Label Text="{Binding Location}" 
+            <Label Text="{Binding Elephant.Location}" 
                    FontAttributes="Italic" 
                    HorizontalOptions="Center" />
-            <Image Source="{Binding ImageUrl}" 
+            <Image Source="{Binding Elephant.ImageUrl}" 
                    HeightRequest="200" 
                    WidthRequest="200" 
                    HorizontalOptions="CenterAndExpand" />
-            <Label Text="{Binding Details}" 
+            <Label Text="{Binding Elephant.Details}" 
                    Style="{DynamicResource BodyStyle}" />
         </StackLayout>
     </ScrollView>
