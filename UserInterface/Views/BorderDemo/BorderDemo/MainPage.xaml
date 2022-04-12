@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BorderDemo.MainPage">
+    <VerticalStackLayout Margin="20"
+                         Spacing="20">
+        <Border Stroke="#C49B33"
+                StrokeThickness="4"
+                Background="#2B0B98"
+                Padding="16,8"
+                HorizontalOptions="Center">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="40,0,0,40" />
+            </Border.StrokeShape>
+            <Label Text=".NET MAUI"
+                   TextColor="White"
+                   FontSize="18"
+                   FontAttributes="Bold" />
+        </Border>
+        <Border StrokeThickness="4"
+                Background="#2B0B98"
+                Padding="16,8"
+                HorizontalOptions="Center">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="40,0,0,40" />
+            </Border.StrokeShape>
+            <Border.Stroke>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="Orange"
+                                  Offset="0.1" />
+                    <GradientStop Color="Brown"
+                                  Offset="1.0" />
+                </LinearGradientBrush>
+            </Border.Stroke>
+            <Label Text=".NET MAUI"
+                   TextColor="White"
+                   FontSize="18"
+                   FontAttributes="Bold" />
+        </Border>
+    </VerticalStackLayout>
+</ContentPage>
