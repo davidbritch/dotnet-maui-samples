@@ -6,12 +6,9 @@
         {
             var label = new Label
             {
-                Text = "Hello, Xamarin.Forms!",
+                Text = "Hello from C#",
                 FontFamily = "Lobster"
             };
-
-            label.FontSize = Device.RuntimePlatform == Device.iOS ? 24 :
-                Device.RuntimePlatform == Device.Android ? Device.GetNamedSize(NamedSize.Medium, label) : Device.GetNamedSize(NamedSize.Large, label);
 
             var labelBold = new Label
             {

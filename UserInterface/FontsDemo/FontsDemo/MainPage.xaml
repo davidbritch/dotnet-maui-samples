@@ -2,7 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FontsDemo.MainPage">
     <StackLayout>
-        <Label Text="Hello Forms with XAML"
+        <Label Text="Hello from XAML"
                FontFamily="Lobster" />
 
         <StackLayout Orientation="Horizontal">
@@ -12,14 +12,14 @@
                    FontAttributes="Bold" />
         </StackLayout>
 
-        <Label Text="Biggest NamedSize"
-               FontSize="Large" />
+        <Label Text="Size 18"
+               FontSize="18" />
         <Label Text="Use size 72"
                FontSize="72"
                FontAttributes="Italic" />
-        <Label Text="Specify Bold Attribute and Micro Size">
+        <Label Text="Specify Bold Attribute and small size">
             <Label.FontAttributes>Bold</Label.FontAttributes>
-            <Label.FontSize>Micro</Label.FontSize>
+            <Label.FontSize>10</Label.FontSize>
         </Label>
         <Label Text="Multiple FontAttributes"
                FontAttributes="Bold, Italic" />
