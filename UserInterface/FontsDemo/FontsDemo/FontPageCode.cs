@@ -28,7 +28,13 @@
                 FontSize = 14,
                 FontAttributes = FontAttributes.Bold | FontAttributes.Italic
             };
-
+            var platformSizedLabel = new Label
+            {
+                Text = "Label sized differently per platform"
+            };
+            platformSizedLabel.FontSize = DeviceInfo.Platform == DevicePlatform.Android ? 20 :
+                DeviceInfo.Platform == DevicePlatform.WinUI ? 24 : 22;
+            
             // Span formatting support
             var labelFormatted = new Label();
             var fs = new FormattedString();
@@ -41,7 +47,7 @@
             {
                 Children =
                 {
-                    label, labelBold, labelItalic, labelBoldItalic, labelFormatted
+                    label, labelBold, labelItalic, labelBoldItalic, labelFormatted, platformSizedLabel
                 }
             };
         }
