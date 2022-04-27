@@ -1,6 +1,7 @@
 ﻿using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Shapes;
 using Microsoft.Maui.Graphics;
+using Path = Microsoft.Maui.Controls.Shapes.Path;
 
 namespace ControlGallery.Views.Code
 {
