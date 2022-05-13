@@ -37,5 +37,18 @@
                    FontSize="18"
                    FontAttributes="Bold" />
         </Border>
+
+        <!-- Use StrokeShape converter -->
+        <Border Stroke="#C49B33"
+                StrokeThickness="4"
+                StrokeShape="RoundRectangle 40,0,0,40"
+                Background="#2B0B98"
+                Padding="16,8"
+                HorizontalOptions="Center">
+            <Label Text=".NET MAUI"
+                   TextColor="White"
+                   FontSize="18"
+                   FontAttributes="Bold" />
+        </Border>
     </VerticalStackLayout>
 </ContentPage>
