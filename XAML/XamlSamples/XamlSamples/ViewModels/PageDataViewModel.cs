@@ -40,9 +40,6 @@
                 new PageDataViewModel(typeof(StaticConstantsPage), "Static Constants",
                                       "Using the x:Static markup extensions"),
 
-                new PageDataViewModel(typeof(RelativeLayoutPage), "Relative Layout",
-                                      "Explore XAML markup extensions"),
-
                 // Part 4. Data Binding Basics
                 new PageDataViewModel(typeof(SliderBindingsPage), "Slider Bindings",
                                       "Bind properties of two views on the page"),
