@@ -11,7 +11,12 @@ namespace XamlSamples
 
         public Color Color { private set; get; }
 
-        // Static members.
+        // Expose the Color fields as properties
+        public float Red => Color.Red;
+        public float Green => Color.Green;
+        public float Blue => Color.Blue;
+
+        // Static members
         static NamedColor()
         {
             List<NamedColor> all = new List<NamedColor>();

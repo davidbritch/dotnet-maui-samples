@@ -28,15 +28,15 @@
                                    FontSize="Medium" />
                             <StackLayout Orientation="Horizontal"
                                          Spacing="0">
-                                <Label Text="{Binding Color.Red,
+                                <Label Text="{Binding Red,
                                        Converter={StaticResource intConverter},
                                        ConverterParameter=255,
                                        StringFormat='R={0:X2}'}" />                                
-                                <Label Text="{Binding Color.Green,
+                                <Label Text="{Binding Green,
                                        Converter={StaticResource intConverter},
                                        ConverterParameter=255,
                                        StringFormat=', G={0:X2}'}" />                                
-                                <Label Text="{Binding Color.Blue,
+                                <Label Text="{Binding Blue,
                                        Converter={StaticResource intConverter},
                                        ConverterParameter=255,
                                        StringFormat=', B={0:X2}'}" />
