@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShapesDemos", "ShapesDemos\ShapesDemos.csproj", "{D7A55FF2-03CA-420F-B39B-DD8FA2752EEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShapesDemos", "ShapesDemos\ShapesDemos.csproj", "{2EF26176-BB59-41B3-9229-19A507D14D90}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,12 +11,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D7A55FF2-03CA-420F-B39B-DD8FA2752EEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D7A55FF2-03CA-420F-B39B-DD8FA2752EEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D7A55FF2-03CA-420F-B39B-DD8FA2752EEB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{D7A55FF2-03CA-420F-B39B-DD8FA2752EEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D7A55FF2-03CA-420F-B39B-DD8FA2752EEB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D7A55FF2-03CA-420F-B39B-DD8FA2752EEB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{2EF26176-BB59-41B3-9229-19A507D14D90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EF26176-BB59-41B3-9229-19A507D14D90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EF26176-BB59-41B3-9229-19A507D14D90}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2EF26176-BB59-41B3-9229-19A507D14D90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EF26176-BB59-41B3-9229-19A507D14D90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EF26176-BB59-41B3-9229-19A507D14D90}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,6 +5,7 @@ namespace BrushesDemos.Views
     public partial class UpdateBrushDemoPage : ContentPage
     {
         readonly Random random;
+        Timer timer;
 
         public UpdateBrushDemoPage()
         {
@@ -12,12 +13,15 @@ namespace BrushesDemos.Views
             random = new Random();
 
             UpdateBrushes();
-            Device.StartTimer(TimeSpan.FromSeconds(1), () =>
-            {
-                UpdateBrushes();
-                return true;
-            });
+
+            timer = new Timer(new TimerCallback((s) =>
+                MainThread.BeginInvokeOnMainThread(() => UpdateBrushes())),
+                null,
+                TimeSpan.Zero,
+                TimeSpan.FromSeconds(1));
         }
+
+        ~UpdateBrushDemoPage() => timer.Dispose();
 
         void UpdateBrushes()
         {

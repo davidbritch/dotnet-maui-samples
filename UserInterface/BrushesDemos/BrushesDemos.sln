@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrushesDemos", "BrushesDemos\BrushesDemos.csproj", "{B20CEB7C-C89D-4A17-9519-EF69709143D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrushesDemos", "BrushesDemos\BrushesDemos.csproj", "{F7810B04-96C6-4902-85CD-15788CF21E5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,12 +11,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B20CEB7C-C89D-4A17-9519-EF69709143D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B20CEB7C-C89D-4A17-9519-EF69709143D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B20CEB7C-C89D-4A17-9519-EF69709143D6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{B20CEB7C-C89D-4A17-9519-EF69709143D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B20CEB7C-C89D-4A17-9519-EF69709143D6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B20CEB7C-C89D-4A17-9519-EF69709143D6}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F7810B04-96C6-4902-85CD-15788CF21E5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7810B04-96C6-4902-85CD-15788CF21E5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7810B04-96C6-4902-85CD-15788CF21E5A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F7810B04-96C6-4902-85CD-15788CF21E5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7810B04-96C6-4902-85CD-15788CF21E5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7810B04-96C6-4902-85CD-15788CF21E5A}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

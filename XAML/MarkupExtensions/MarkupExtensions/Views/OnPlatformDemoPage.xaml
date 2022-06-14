@@ -5,9 +5,9 @@
              Title="OnPlatform Demo">
     <StackLayout Margin="20">
         <BoxView x:Name="boxView"
-                 Color="{OnPlatform iOS=Red, Android=Green, UWP=Blue}" 
-                 WidthRequest="{OnPlatform iOS=200, Android=300, UWP=400}"  
-                 HeightRequest="{OnPlatform iOS=200, Android=300, UWP=400}" 
+                 Color="{OnPlatform iOS=Red, Android=Green, WinUI=Blue}" 
+                 WidthRequest="{OnPlatform iOS=200, Android=300, WinUI=400}"  
+                 HeightRequest="{OnPlatform iOS=200, Android=300, WinUI=400}" 
                  HorizontalOptions="Center" />
         <Label BindingContext="{x:Reference boxView}" 
                HorizontalTextAlignment="Center">

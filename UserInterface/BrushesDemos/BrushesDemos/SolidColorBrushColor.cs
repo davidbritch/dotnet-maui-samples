@@ -24,19 +24,17 @@ namespace BrushesDemos
         {
             List<SolidColorBrushColor> all = new List<SolidColorBrushColor>();
 
-            // Loop through the public static fields of the Brush class
-            foreach (FieldInfo fieldInfo in typeof(Brush).GetRuntimeFields())
+            // Loop through the properties of the Brush class
+            foreach (PropertyInfo propertyInfo in typeof(Brush).GetRuntimeProperties())
             {
-                if (fieldInfo.IsPublic &&
-                    fieldInfo.IsStatic &&
-                    fieldInfo.FieldType == typeof(SolidColorBrush))
+                if (propertyInfo.PropertyType == typeof(SolidColorBrush))
                 {
                     // Instantiate a SolidColorBrushColor object
-                    SolidColorBrush brush = (SolidColorBrush)fieldInfo.GetValue(null);
+                    SolidColorBrush brush = (SolidColorBrush)propertyInfo.GetValue(null);
 
                     SolidColorBrushColor brushColor = new SolidColorBrushColor
                     {
-                        Name = fieldInfo.Name,
+                        Name = propertyInfo.Name,
                         Color = brush.Color,
                         Hex = brush.Color.ToHex()
                     };

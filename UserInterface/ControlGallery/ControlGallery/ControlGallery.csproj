@@ -3,19 +3,22 @@
 	<PropertyGroup>
 		<TargetFrameworks>net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
 		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net6.0-windows10.0.19041.0</TargetFrameworks>
+		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net6.0-tizen</TargetFrameworks> -->
 		<OutputType>Exe</OutputType>
 		<RootNamespace>ControlGallery</RootNamespace>
 		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>enable</ImplicitUsings>
-
+		<EnableDefaultCssItems>false</EnableDefaultCssItems>
+		
 		<!-- Display name -->
 		<ApplicationTitle>ControlGallery</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.ControlGallery</ApplicationId>
-		<ApplicationIdGuid>76EBB0CD-DF19-473C-B262-6F5DD9E7E221</ApplicationIdGuid>
-		
+		<ApplicationId>com.companyname.controlgallery</ApplicationId>
+		<ApplicationIdGuid>66443669-5C0B-49FA-9D23-EE57B5C5F90A</ApplicationIdGuid>
+
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
@@ -30,57 +33,29 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" Color="#512BD4" />
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4" />
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
+		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Images\Banana.jpg" />
+	  <None Remove="Resources\Images\banana.jpg" />
 	  <None Remove="Resources\Images\dotnet_bot.png" />
-	  <None Remove="Resources\Images\FacePalm.jpg" />
+	  <None Remove="Resources\Images\facepalm.jpg" />
 	  <None Remove="Resources\Images\icon.png" />
-	  <None Remove="Resources\Images\SeatedMonkey.jpg" />
-	  <None Remove="Resources\Images\XamarinLogo.png" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Include="Pages\Counter.razor" />
-	  <None Include="Pages\FetchData.razor" />
-	  <None Include="Pages\Index.razor" />
-	  <None Include="Shared\MainLayout.razor" />
-	  <None Include="Shared\NavMenu.razor" />
-	  <None Include="Shared\SurveyPrompt.razor" />
-	  <None Include="wwwroot\css\bootstrap\bootstrap.min.css.map" />
-	  <None Include="wwwroot\css\open-iconic\FONT-LICENSE" />
-	  <None Include="wwwroot\css\open-iconic\font\fonts\open-iconic.svg" />
-	  <None Include="wwwroot\css\open-iconic\ICON-LICENSE" />
-	  <None Include="wwwroot\css\open-iconic\README.md" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Compile Update="Views\XAML\BlazorWebViewDemoPage.xaml.cs">
-	    <DependentUpon>BlazorWebViewDemoPage.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="Views\XAML\BorderDemoPage.xaml.cs">
-	    <DependentUpon>BorderDemoPage.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="Views\XAML\GraphicsViewDemoPage.xaml.cs">
-	    <DependentUpon>GraphicsViewDemoPage.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="Views\XAML\VerticalStackLayoutDemoPage.xaml.cs">
-	    <DependentUpon>VerticalStackLayoutDemoPage.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="Views\XAML\HorizontalStackLayoutDemoPage.xaml.cs">
-	    <DependentUpon>HorizontalStackLayoutDemoPage.xaml</DependentUpon>
-	  </Compile>
+	  <None Remove="Resources\Images\seatedmonkey.jpg" />
+	  <None Remove="Resources\Images\xamarinlogo.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -91,7 +66,6 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\XAML\BlazorWebViewDemoPage.xaml">
-	    <SubType>Designer</SubType>
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\XAML\BorderDemoPage.xaml">
@@ -142,7 +116,13 @@
 	  <MauiXaml Update="Views\XAML\FrameDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\XAML\GraphicsViewDemoPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\XAML\GridDemoPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\XAML\HorizontalStackLayoutDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\XAML\ImageButtonDemoPage.xaml">
@@ -166,13 +146,10 @@
 	  <MauiXaml Update="Views\XAML\ListViewDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\XAML\MapDemoPage.xaml">
+	  <MauiXaml Update="Views\XAML\MainPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\XAML\NavigationPageDemoPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\XAML\GraphicsViewDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\XAML\PathDemoPage.xaml">
@@ -211,12 +188,6 @@
 	  <MauiXaml Update="Views\XAML\SliderDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\XAML\VerticalStackLayoutDemoPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\XAML\HorizontalStackLayoutDemoPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="Views\XAML\StackLayoutDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -247,14 +218,12 @@
 	  <MauiXaml Update="Views\XAML\TimePickerDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\XAML\VerticalStackLayoutDemoPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\XAML\WebViewDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
-
-	<PropertyGroup Condition="$(TargetFramework.Contains('-windows'))">
-		<OutputType>WinExe</OutputType>
-		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
-	</PropertyGroup>
 
 </Project>

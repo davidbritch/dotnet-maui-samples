@@ -6,6 +6,8 @@
         public static readonly BindableProperty MinuteHandAngleProperty = BindableProperty.Create(nameof(MinuteHandAngle), typeof(double), typeof(AnalogClockDemoPage), default(double));
         public static readonly BindableProperty HourHandAngleProperty = BindableProperty.Create(nameof(HourHandAngle), typeof(double), typeof(AnalogClockDemoPage), default(double));
 
+        Timer timer;
+
         public double SecondHandAngle
         {
             get { return (double)GetValue(SecondHandAngleProperty); }
@@ -29,14 +31,18 @@
             InitializeComponent();
 
             BindingContext = this;
-            Device.StartTimer(TimeSpan.FromMilliseconds(15), () =>
-            {
-                DateTime dateTime = DateTime.Now;
-                SecondHandAngle = 6 * (dateTime.Second + dateTime.Millisecond / 1000.0);
-                MinuteHandAngle = 6 * dateTime.Minute + SecondHandAngle / 60;
-                HourHandAngle = 30 * (dateTime.Hour % 12) + MinuteHandAngle / 12;
-                return true;
-            });
+
+            timer = new Timer(new TimerCallback((s) =>
+                MainThread.BeginInvokeOnMainThread(() =>
+                {
+                    DateTime dateTime = DateTime.Now;
+                    SecondHandAngle = 6 * (dateTime.Second + dateTime.Millisecond / 1000.0);
+                    MinuteHandAngle = 6 * dateTime.Minute + SecondHandAngle / 60;
+                    HourHandAngle = 30 * (dateTime.Hour % 12) + MinuteHandAngle / 12;
+                })),
+                null,
+                TimeSpan.Zero,
+                TimeSpan.FromMilliseconds(15));
 
             SizeChanged += (sender, args) =>
             {
@@ -45,5 +51,7 @@
                 grid.Scale = Math.Min(Width, Height) / 200;
             };
         }
+
+        ~AnalogClockDemoPage() => timer.Dispose();
     }
 }

@@ -1,15 +1,11 @@
-﻿using Microsoft.Maui.Controls;
-using Application = Microsoft.Maui.Controls.Application;
+﻿namespace ControlGallery;
 
-namespace ControlGallery
+public partial class App : Application
 {
-    public partial class App : Application
+	public App()
 	{
-		public App()
-		{
-			InitializeComponent();
+		InitializeComponent();
 
-			MainPage = new NavigationPage(new MainPage());
-		}
+		MainPage = new NavigationPage(new MainPage());
 	}
 }

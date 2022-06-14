@@ -1,34 +1,33 @@
-﻿using System;
-using Microsoft.Maui.Controls;
+﻿using Microsoft.Maui.Dispatching;
 
 namespace ControlGallery.Views.XAML
 {
     public partial class ProgressBarDemoPage : ContentPage
     {
-        bool isActiveWindow;
+        IDispatcherTimer timer;
 
         public ProgressBarDemoPage()
         {
             InitializeComponent();
         }
 
+        ~ProgressBarDemoPage() => timer.Tick -= OnTimerTick;
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            isActiveWindow = true;
-            Device.StartTimer(TimeSpan.FromSeconds(0.1), TimerCallback);
+
+            timer = Dispatcher.CreateTimer();
+            timer.Interval = TimeSpan.FromSeconds(0.1);
+            timer.Tick += OnTimerTick;
+            timer.Start();
         }
 
-        protected override void OnDisappearing()
-        {
-            base.OnDisappearing();
-            isActiveWindow = false;
-        }
-
-        bool TimerCallback()
+        void OnTimerTick(object sender, EventArgs e)
         {
             progressBar.Progress += 0.01;
-            return isActiveWindow || progressBar.Progress == 1;
+            if (progressBar.Progress == 1)
+                timer.Stop();
         }
     }
 }
