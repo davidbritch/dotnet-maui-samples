@@ -1,85 +1,65 @@
-﻿using System.ComponentModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
-namespace XamlSamples
+namespace XamlSamples;
+
+class HslViewModel: INotifyPropertyChanged
 {
-    public class HslViewModel : INotifyPropertyChanged
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    private float _hue, _saturation, _luminosity;
+    private Color _color;
+
+    public float Hue
     {
-        float hue, saturation, luminosity;
-        Color color;
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public float Hue
+        get => _hue;
+        set
         {
-            get
-            {
-                return hue;
-            }
-            set
-            {
-                if (hue != value)
-                {
-                    Color = Color.FromHsla(value, saturation, luminosity);
-                }
-            }
-        }
-
-        public float Saturation
-        {
-            get
-            {
-                return saturation;
-            }
-            set
-            {
-                if (saturation != value)
-                {
-                    Color = Color.FromHsla(hue, value, luminosity);
-                }
-            }
-        }
-
-        public float Luminosity
-        {
-            get
-            {
-                return luminosity;
-            }
-            set
-            {
-                if (luminosity != value)
-                {
-                    Color = Color.FromHsla(hue, saturation, value);
-                }
-            }
-        }
-
-        public Color Color
-        {
-            get
-            {
-                return color;
-            }
-            set
-            {
-                if (color != value)
-                {
-                    color = value;
-                    hue = color.GetHue();
-                    saturation = color.GetSaturation();
-                    luminosity = color.GetLuminosity();
-                    
-                    OnPropertyChanged("Hue");
-                    OnPropertyChanged("Saturation");
-                    OnPropertyChanged("Luminosity");
-                    OnPropertyChanged("Color");
-                }
-            }
-        }
-
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            if (_hue != value)
+                Color = Color.FromHsla(value, _saturation, _luminosity);
         }
     }
+
+    public float Saturation
+    {
+        get => _saturation;
+        set
+        {
+            if (_saturation != value)
+                Color = Color.FromHsla(_hue, value, _luminosity);
+        }
+    }
+
+    public float Luminosity
+    {
+        get => _luminosity;
+        set
+        {
+            if (_luminosity != value)
+                Color = Color.FromHsla(_hue, _saturation, value);
+        }
+    }
+
+    public Color Color
+    {
+        get => _color;
+        set
+        {
+            if (_color != value)
+            {
+                _color = value;
+                _hue = _color.GetHue();
+                _saturation = _color.GetSaturation();
+                _luminosity = _color.GetLuminosity();
+
+                OnPropertyChanged("Hue");
+                OnPropertyChanged("Saturation");
+                OnPropertyChanged("Luminosity");
+                OnPropertyChanged(); // reports this property
+            }
+        }
+    }
+
+    public void OnPropertyChanged([CallerMemberName] string name = "") =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 }
