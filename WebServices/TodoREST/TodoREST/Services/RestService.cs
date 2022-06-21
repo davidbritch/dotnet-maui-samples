@@ -65,19 +65,12 @@ namespace TodoREST.Services
 
                 HttpResponseMessage response = null;
                 if (isNewItem)
-                {
                     response = await _client.PostAsync(uri, content);
-                }
                 else
-                {
                     response = await _client.PutAsync(uri, content);
-                }
 
                 if (response.IsSuccessStatusCode)
-                {
                     Debug.WriteLine(@"\tTodoItem successfully saved.");
-                }
-
             }
             catch (Exception ex)
             {
@@ -92,12 +85,8 @@ namespace TodoREST.Services
             try
             {
                 HttpResponseMessage response = await _client.DeleteAsync(uri);
-
                 if (response.IsSuccessStatusCode)
-                {
                     Debug.WriteLine(@"\tTodoItem successfully deleted.");
-                }
-
             }
             catch (Exception ex)
             {

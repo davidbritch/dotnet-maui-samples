@@ -16,7 +16,6 @@ namespace TodoREST.Views
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-
             collectionView.ItemsSource = await _todoService.GetTasksAsync();
         }
 
@@ -26,7 +25,6 @@ namespace TodoREST.Views
             {
                 { nameof(TodoItem), new TodoItem { ID = Guid.NewGuid().ToString() } }
             };
-
             await Shell.Current.GoToAsync(nameof(TodoItemPage), navigationParameter);
         }
 
@@ -36,7 +34,6 @@ namespace TodoREST.Views
             {
                 { nameof(TodoItem), e.CurrentSelection.FirstOrDefault() as TodoItem }
             };
-
             await Shell.Current.GoToAsync(nameof(TodoItemPage), navigationParameter);
         }
     }
