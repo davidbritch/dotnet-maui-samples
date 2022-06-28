@@ -1,23 +1,26 @@
-﻿using Microsoft.Maui.Controls;
-using InvokePlatformCodeDemos.Services;
+﻿using InvokePlatformCodeDemos.Services;
+using ConditionalCompilationDeviceOrientationService = InvokePlatformCodeDemos.Services.ConditionalCompilation.DeviceOrientationService;
+using PartialMethodsDeviceOrientationService = InvokePlatformCodeDemos.Services.PartialMethods.DeviceOrientationService;
 
-namespace InvokePlatformCodeDemos
+namespace InvokePlatformCodeDemos;
+
+public partial class MainPage : ContentPage
 {
-	public partial class MainPage : ContentPage
+	public MainPage()
 	{
-		public MainPage()
-		{
-			InitializeComponent();
-		}
+		InitializeComponent();
+	}
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
 
-			DeviceOrientationService deviceOrientationService = new DeviceOrientationService();
-			DeviceOrientation orientation = deviceOrientationService.GetOrientation();
+        var deviceOrientationService1 = new ConditionalCompilationDeviceOrientationService();
+        DeviceOrientation orientation1 = deviceOrientationService1.GetOrientation();
+        conditionalCompilationOrientationLabel.Text = orientation1.ToString();
 
-			orientationLabel.Text = orientation.ToString();
-        }
+        var deviceOrientationService2 = new PartialMethodsDeviceOrientationService();
+        DeviceOrientation orientation2 = deviceOrientationService1.GetOrientation();
+        partialMethodsOrientationLabel.Text = orientation2.ToString();    
     }
 }
