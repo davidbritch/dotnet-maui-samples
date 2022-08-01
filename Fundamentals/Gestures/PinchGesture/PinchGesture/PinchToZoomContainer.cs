@@ -49,8 +49,8 @@
                 double targetY = yOffset - (originY * Content.Height) * (currentScale - startScale);
 
                 // Apply translation based on the change in origin.
-                Content.TranslationX = targetX.Clamp(-Content.Width * (currentScale - 1), 0);
-                Content.TranslationY = targetY.Clamp(-Content.Height * (currentScale - 1), 0);
+                Content.TranslationX = Math.Clamp(targetX, -Content.Width * (currentScale - 1), 0);
+                Content.TranslationY = Math.Clamp(targetY, -Content.Height * (currentScale - 1), 0);
 
                 // Apply scale factor
                 Content.Scale = currentScale;
