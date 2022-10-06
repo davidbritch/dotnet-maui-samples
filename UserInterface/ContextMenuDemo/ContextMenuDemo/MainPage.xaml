@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ContextMenuDemo.MainPage">
+    <ScrollView>
+        <VerticalStackLayout Margin="20"
+                             Spacing="6">
+             <Label x:Name="label"
+                    Text="Right-click to choose color">
+                <FlyoutBase.ContextFlyout>
+                    <MenuFlyout>
+                        <MenuFlyoutItem Text="Black"
+                                        Clicked="OnLabelClicked"
+                                        CommandParameter="Black" />
+                        <MenuFlyoutSubItem Text="Light">
+                            <MenuFlyoutItem Text="Blue"
+                                            Clicked="OnLabelClicked"
+                                            CommandParameter="LightBlue" />
+                            <MenuFlyoutItem Text="Coral"
+                                            Clicked="OnLabelClicked"
+                                            CommandParameter="LightCoral" />
+                            <MenuFlyoutItem Text="Cyan"
+                                            Clicked="OnLabelClicked"
+                                            CommandParameter="LightCyan" />
+                        </MenuFlyoutSubItem>
+                        <MenuFlyoutSubItem Text="Dark">
+                            <MenuFlyoutItem Text="Blue"
+                                            Clicked="OnLabelClicked"
+                                            CommandParameter="DarkBlue" />
+                            <MenuFlyoutItem Text="Cyan"
+                                            Clicked="OnLabelClicked"
+                                            CommandParameter="DarkCyan" />
+                            <MenuFlyoutItem Text="Magenta"
+                                            Clicked="OnLabelClicked"
+                                            CommandParameter="DarkMagenta" />
+                        </MenuFlyoutSubItem>
+                    </MenuFlyout>
+                </FlyoutBase.ContextFlyout>
+            </Label>
+
+            <Entry x:Name="entry"
+                   Text="Style this text with the context menu.">
+                <FlyoutBase.ContextFlyout>
+                    <MenuFlyout>
+                        <MenuFlyoutItem Text="Bold"
+                                        Clicked="OnEntryBoldClicked" />
+                        <MenuFlyoutItem Text="Italic"
+                                        Clicked="OnEntryItalicClicked" />
+                        <MenuFlyoutItem Text="None"
+                                        Clicked="OnEntryNoneClicked" />
+                    </MenuFlyout>
+                </FlyoutBase.ContextFlyout>
+            </Entry>
+
+            <Label Text="{Binding Counter}"
+                   FontSize="18" />
+            <Button Text="Increment Counter"
+                    Clicked="OnButtonClicked">
+                <FlyoutBase.ContextFlyout>
+                    <MenuFlyout>
+                        <MenuFlyoutItem Text="Increment by 10"
+                                        Clicked="OnIncrementMenuItemClicked"
+                                        CommandParameter="10" />
+                        <MenuFlyoutItem Text="Increment by 100"
+                                        Clicked="OnIncrementMenuItemClicked"
+                                        CommandParameter="100" />
+                        <MenuFlyoutItem Text="Increment by 1000"
+                                        Clicked="OnIncrementMenuItemClicked"
+                                        CommandParameter="1000" />
+                    </MenuFlyout>
+                </FlyoutBase.ContextFlyout>
+            </Button>
+
+            <Button Text="&#x25B6;&#xFE0F; Play"
+                    WidthRequest="80">
+                <FlyoutBase.ContextFlyout>
+                    <MenuFlyout>
+                        <MenuFlyoutItem Text="Pause"
+                                        Clicked="OnPauseClicked">
+                            <MenuFlyoutItem.IconImageSource>
+                                <FontImageSource Glyph="&#x23F8;"
+                                                 FontFamily="Arial" />
+                            </MenuFlyoutItem.IconImageSource>
+                        </MenuFlyoutItem>
+                        <MenuFlyoutItem Text="Stop"
+                                        Clicked="OnStopClicked">
+                            <MenuFlyoutItem.IconImageSource>
+                                <FontImageSource Glyph="&#x23F9;"
+                                                 FontFamily="Arial" />
+                            </MenuFlyoutItem.IconImageSource>
+                        </MenuFlyoutItem>
+                    </MenuFlyout>
+                </FlyoutBase.ContextFlyout>
+            </Button>
+
+            <!-- Not fully supported -->
+            <Label x:Name="dynamicContextMenuLabel"
+                   Text="Right-click to add additional context menu items">
+                <FlyoutBase.ContextFlyout>
+                    <MenuFlyout>
+                        <MenuFlyoutItem Text="Add menu item"
+                                        Clicked="OnAddMenuItemClicked" />
+                        <MenuFlyoutSubItem Text="Add sub menu item"
+                                           Clicked="OnAddSubMenuItemClicked" />
+                    </MenuFlyout>
+                </FlyoutBase.ContextFlyout>
+            </Label>
+
+            <WebView x:Name="webView"
+                     Source="https://learn.microsoft.com/dotnet/maui"
+                     MinimumHeightRequest="400">
+                <FlyoutBase.ContextFlyout>
+                    <MenuFlyout>
+                        <MenuFlyoutItem Text="Go to docs repo"
+                                        Clicked="OnWebViewGoToRepoClicked"
+                                        CommandParameter="docs" />
+                        <MenuFlyoutItem Text="Go to engineering repo"
+                                        Clicked="OnWebViewGoToRepoClicked" 
+                                        CommandParameter="eng" />
+                    </MenuFlyout>
+                </FlyoutBase.ContextFlyout>
+            </WebView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
