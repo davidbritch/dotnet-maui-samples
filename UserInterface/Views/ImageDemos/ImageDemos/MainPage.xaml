@@ -11,7 +11,7 @@
             <Image HeightRequest="500">
                 <Image.Source>
                     <UriImageSource Uri="https://aka.ms/campus.jpg"
-                                    CacheValidity="10:00:00.0" />
+                                    CacheValidity="10:00:00:00" />
                 </Image.Source>
             </Image>
             <Image Source="{local:ImageResource monkey.png}"
