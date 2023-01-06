@@ -15,7 +15,8 @@ public partial class MainPage : FlyoutPage
         if (item != null)
         {            
             Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
-            IsPresented = false;
+            if (!((IFlyoutPageController)this).ShouldShowSplitMode)
+                IsPresented = false;
         }
     }
 }
