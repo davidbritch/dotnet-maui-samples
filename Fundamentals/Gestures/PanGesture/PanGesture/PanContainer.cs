@@ -2,7 +2,7 @@
 {
     public class PanContainer : ContentView
     {
-        double x, y;
+        double panX, panY;
 
         public PanContainer()
         {
@@ -19,14 +19,16 @@
             {
                 case GestureStatus.Running:
                     // Translate and ensure we don't pan beyond the wrapped user interface element bounds.
-                    Content.TranslationX = Math.Max(Math.Min(0, x + e.TotalX), -Math.Abs(Content.Width - DeviceDisplay.MainDisplayInfo.Width));
-                    Content.TranslationY = Math.Max(Math.Min(0, y + e.TotalY), -Math.Abs(Content.Height - DeviceDisplay.MainDisplayInfo.Height));
+                    double boundsX = Content.Width;
+                    double boundsY = Content.Height;
+                    Content.TranslationX = Math.Clamp(panX + e.TotalX, -boundsX, boundsX);
+                    Content.TranslationY = Math.Clamp(panY + e.TotalY, -boundsY, boundsY);
                     break;
 
                 case GestureStatus.Completed:
                     // Store the translation applied during the pan
-                    x = Content.TranslationX;
-                    y = Content.TranslationY;
+                    panX = Content.TranslationX;
+                    panY = Content.TranslationY;
                     break;
             }
         }
