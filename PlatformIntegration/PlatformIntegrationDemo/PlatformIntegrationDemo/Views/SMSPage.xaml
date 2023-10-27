@@ -10,19 +10,26 @@
     </views:BasePage.BindingContext>
 
     <Grid RowDefinitions="Auto,*">
-        <Label Text="Easily send SMS messages." FontAttributes="Bold" Margin="12" />
+        <Label Text="Easily send SMS messages."
+               FontAttributes="Bold"
+               Margin="12" />
 
         <ScrollView Grid.Row="1">
-            <StackLayout Padding="12,0,12,12" Spacing="6">
+            <StackLayout Padding="12,0,12,12"
+                         Spacing="6">
                 <Label Text="Recipents (optional, separate multiple with ',' or '*'):" />
-                <Entry Text="{Binding Recipient}" Keyboard="Telephone" />
+                <Entry Text="{Binding Recipient}"
+                       Keyboard="Telephone" />
                 <Label Text="Message Text (optional):" />
                 <Editor Text="{Binding MessageText}"
-                        Keyboard="Chat" AutoSize="TextChanges" />
+                        Keyboard="Chat"
+                        AutoSize="TextChanges" />
 
-                <Button Text="Send SMS" Command="{Binding SendSmsCommand}" />
+                <Button Text="Send SMS"
+                        Command="{Binding SendSmsCommand}" />
 
-                <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" />
+                <ActivityIndicator IsVisible="{Binding IsBusy}"
+                                   IsRunning="{Binding IsBusy}" />
             </StackLayout>
         </ScrollView>
     </Grid>

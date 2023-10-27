@@ -9,43 +9,48 @@
         <viewmodels:MainPageViewModel />
     </views:BasePage.BindingContext>
 
-        <CollectionView
-            ItemsSource="{Binding FilteredItems}"
-            SelectionMode="Single"
-            SelectionChanged="OnSampleTapped"
-            VerticalOptions="Fill">
+    <CollectionView ItemsSource="{Binding FilteredItems}"
+                    SelectionMode="Single"
+                    SelectionChanged="OnSampleTapped"
+                    VerticalOptions="Fill">
 
-            <CollectionView.Header>
-                <SearchBar Placeholder="Filter samples..." Text="{Binding FilterText}" />
-            </CollectionView.Header>
+        <CollectionView.Header>
+            <SearchBar Placeholder="Filter samples..."
+                       Text="{Binding FilterText}" />
+        </CollectionView.Header>
 
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Grid Padding="12,6" ColumnSpacing="6" RowSpacing="3">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="48" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Grid Padding="12,6"
+                      ColumnSpacing="6"
+                      RowSpacing="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="48" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
 
-                        <Label Text="{Binding Icon}"
-                                   FontSize="24"
-                                   Grid.Row="0"
-                                   Grid.Column="0"
-                                   Grid.RowSpan="2"
-                                   HorizontalOptions="Center" VerticalOptions="Center" />
+                    <Label Text="{Binding Icon}"
+                           FontSize="24"
+                           Grid.Row="0"
+                           Grid.Column="0"
+                           Grid.RowSpan="2"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center" />
 
-                        <Label Text="{Binding Name}"
-                                   FontAttributes="Bold"
-                                   Grid.Column="1" />
-                        <Label Text="{Binding Description}"
-                                   FontAttributes="Italic" TextColor="DarkGray"
-                                   Grid.Column="1" Grid.Row="1" />
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+                    <Label Text="{Binding Name}"
+                           FontAttributes="Bold"
+                           Grid.Column="1" />
+                    <Label Text="{Binding Description}"
+                           FontAttributes="Italic"
+                           TextColor="DarkGray"
+                           Grid.Column="1"
+                           Grid.Row="1" />
+                </Grid>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
 </views:BasePage>

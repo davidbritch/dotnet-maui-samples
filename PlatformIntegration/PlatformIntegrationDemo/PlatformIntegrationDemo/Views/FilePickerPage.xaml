@@ -10,21 +10,33 @@
     </views:BasePage.BindingContext>
 
     <Grid RowDefinitions="Auto,*">
-        <Label Text="Pick files from storage." FontAttributes="Bold" Margin="12" />
+        <Label Text="Pick files from storage."
+               FontAttributes="Bold"
+               Margin="12" />
 
         <ScrollView Grid.Row="1">
-            <StackLayout Padding="12,0,12,12" Spacing="6">
-                <Button Text="Pick file" Command="{Binding PickFileCommand}" />
-                <Button Text="Pick image" Command="{Binding PickImageCommand}" />
-                <Button Text="Pick pdf" Command="{Binding PickPdfCommand}" />
-                <Button Text="Pick custom type" Command="{Binding PickCustomTypeCommand}" />
-                <Button Text="Pick image and send email" Command="{Binding PickAndSendCommand}" />
-                <Button Text="Pick multiple files" Command="{Binding PickMultipleFilesCommand}" />
+            <StackLayout Padding="12,0,12,12"
+                         Spacing="6">
+                <Button Text="Pick file"
+                        Command="{Binding PickFileCommand}" />
+                <Button Text="Pick image"
+                        Command="{Binding PickImageCommand}" />
+                <Button Text="Pick pdf"
+                        Command="{Binding PickPdfCommand}" />
+                <Button Text="Pick custom type"
+                        Command="{Binding PickCustomTypeCommand}" />
+                <Button Text="Pick image and send email"
+                        Command="{Binding PickAndSendCommand}" />
+                <Button Text="Pick multiple files"
+                        Command="{Binding PickMultipleFilesCommand}" />
 
-                <Label Text="{Binding Text}" HorizontalOptions="FillAndExpand" />
+                <Label Text="{Binding Text}"
+                       HorizontalOptions="FillAndExpand" />
 
-                <Image Source="{Binding Image}" IsVisible="{Binding IsImageVisible}"
-                       HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                <Image Source="{Binding Image}"
+                       IsVisible="{Binding IsImageVisible}"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="FillAndExpand" />
             </StackLayout>
         </ScrollView>
     </Grid>

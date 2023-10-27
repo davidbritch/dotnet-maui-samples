@@ -10,21 +10,29 @@
     </views:BasePage.BindingContext>
 
     <Grid RowDefinitions="Auto,*">
-        <Label Text="Find out about the app with ease." FontAttributes="Bold" Margin="12" />
+        <Label Text="Find out about the app with ease."
+               FontAttributes="Bold"
+               Margin="12" />
 
         <ScrollView Grid.Row="1">
-            <StackLayout Padding="12,0,12,12" Spacing="6">
-                <Label Text="App Info:" FontAttributes="Bold" Margin="0,6,0,0" />
+            <StackLayout Padding="12,0,12,12"
+                         Spacing="6">
+                <Label Text="App Info:"
+                       FontAttributes="Bold"
+                       Margin="0,6,0,0" />
                 <Label Text="{Binding AppName, StringFormat='Name: {0}'}" />
                 <Label Text="{Binding AppPackageName, StringFormat='Package Name: {0}'}" />
                 <Label Text="{Binding AppTheme, StringFormat='Theme: {0}'}" />
 
-                <Label Text="Version Info:" FontAttributes="Bold" Margin="0,6,0,0" />
+                <Label Text="Version Info:"
+                       FontAttributes="Bold"
+                       Margin="0,6,0,0" />
                 <Label Text="{Binding AppVersion, StringFormat='Version: {0}'}" />
                 <Label Text="{Binding AppBuild, StringFormat='Build: {0}'}" />
                 <Label Text="{Binding RequestedLayoutDirection, StringFormat='Layout Direction: {0}'}" />
 
-                <Button Text="Open Settings" Command="{Binding ShowSettingsUICommand}"/>
+                <Button Text="Open Settings"
+                        Command="{Binding ShowSettingsUICommand}" />
             </StackLayout>
         </ScrollView>
     </Grid>

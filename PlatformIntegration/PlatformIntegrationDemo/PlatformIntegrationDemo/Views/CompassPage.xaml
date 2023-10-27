@@ -10,30 +10,48 @@
     </views:BasePage.BindingContext>
 
     <Grid RowDefinitions="Auto,*">
-        <Label Text="Monitor compass for changes." FontAttributes="Bold" Margin="12" />
+        <Label Text="Monitor compass for changes."
+               FontAttributes="Bold"
+               Margin="12" />
 
         <ScrollView Grid.Row="1">
-            <Grid Padding="12,0,12,12" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*,*">
-                <Label Grid.Row="0" Grid.ColumnSpan="2"
+            <Grid Padding="12,0,12,12"
+                  RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
+                  ColumnDefinitions="*,*">
+                <Label Grid.Row="0"
+                       Grid.ColumnSpan="2"
                        Text="{Binding Heading, StringFormat='Heading (degrees): {0:N}'}" />
 
-                <Label Grid.Row="1" Grid.ColumnSpan="2" Text="Speed:" />
+                <Label Grid.Row="1"
+                       Grid.ColumnSpan="2"
+                       Text="Speed:" />
 
-                <Picker Grid.Row="2" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand"
-                        ItemsSource="{Binding Speeds}" 
+                <Picker Grid.Row="2"
+                        Grid.ColumnSpan="2"
+                        HorizontalOptions="FillAndExpand"
+                        ItemsSource="{Binding Speeds}"
                         SelectedIndex="{Binding Speed, Mode=TwoWay}"
                         IsEnabled="{Binding IsActive, Converter={StaticResource InverterConverter}}"
-                        Margin="0,0,0,10"/>
+                        Margin="0,0,0,10" />
 
-                <Label Grid.Row="3" Grid.ColumnSpan="2" Text="Apply low pass filter:" />
+                <Label Grid.Row="3"
+                       Grid.ColumnSpan="2"
+                       Text="Apply low pass filter:" />
 
-                <Switch Grid.Row="4" Grid.ColumnSpan="2"
+                <Switch Grid.Row="4"
+                        Grid.ColumnSpan="2"
                         IsToggled="{Binding ApplyLowPassFilter}" />
 
-                <Button Grid.Row="5" Grid.Column="0" Text="Start" Command="{Binding StartCommand}"
+                <Button Grid.Row="5"
+                        Grid.Column="0"
+                        Text="Start"
+                        Command="{Binding StartCommand}"
                         IsEnabled="{Binding IsActive, Converter={StaticResource InverterConverter}}" />
 
-                <Button Grid.Row="5"  Grid.Column="1" Text="Stop" Command="{Binding StopCommand}"
+                <Button Grid.Row="5"
+                        Grid.Column="1"
+                        Text="Stop"
+                        Command="{Binding StopCommand}"
                         IsEnabled="{Binding IsActive}" />
             </Grid>
         </ScrollView>

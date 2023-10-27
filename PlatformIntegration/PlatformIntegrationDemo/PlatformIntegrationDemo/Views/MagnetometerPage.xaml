@@ -10,24 +10,42 @@
     </views:BasePage.BindingContext>
 
     <Grid RowDefinitions="Auto,*">
-        <Label Text="Detect device's orientation relative to Earth's magnetic field." FontAttributes="Bold" Margin="12" />
+        <Label Text="Detect device's orientation relative to Earth's magnetic field."
+               FontAttributes="Bold"
+               Margin="12" />
 
         <ScrollView Grid.Row="1">
-            <Grid Padding="12,0,12,12" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*,*">
+            <Grid Padding="12,0,12,12"
+                  RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
+                  ColumnDefinitions="*,*">
 
-                <Label Grid.Row="0" Grid.ColumnSpan="2" Text="{Binding X, StringFormat='X: {0:N}'}" />
-                <Label Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Y, StringFormat='Y: {0:N}'}" />
-                <Label Grid.Row="2" Grid.ColumnSpan="2" Text="{Binding Z, StringFormat='Z: {0:N}'}" />
+                <Label Grid.Row="0"
+                       Grid.ColumnSpan="2"
+                       Text="{Binding X, StringFormat='X: {0:N}'}" />
+                <Label Grid.Row="1"
+                       Grid.ColumnSpan="2"
+                       Text="{Binding Y, StringFormat='Y: {0:N}'}" />
+                <Label Grid.Row="2"
+                       Grid.ColumnSpan="2"
+                       Text="{Binding Z, StringFormat='Z: {0:N}'}" />
 
-                <Picker Grid.Row="4" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand"
-                        ItemsSource="{Binding Speeds}" 
+                <Picker Grid.Row="4"
+                        Grid.ColumnSpan="2"
+                        HorizontalOptions="FillAndExpand"
+                        ItemsSource="{Binding Speeds}"
                         SelectedIndex="{Binding Speed, Mode=TwoWay}"
                         IsEnabled="{Binding IsActive, Converter={StaticResource InverterConverter}}" />
 
-                <Button Grid.Row="5" Grid.Column="0" Text="Start" Command="{Binding StartCommand}"
+                <Button Grid.Row="5"
+                        Grid.Column="0"
+                        Text="Start"
+                        Command="{Binding StartCommand}"
                         IsEnabled="{Binding IsActive, Converter={StaticResource InverterConverter}}" />
 
-                <Button Grid.Row="5" Grid.Column="1" Text="Stop" Command="{Binding StopCommand}"
+                <Button Grid.Row="5"
+                        Grid.Column="1"
+                        Text="Stop"
+                        Command="{Binding StopCommand}"
                         IsEnabled="{Binding IsActive}" />
             </Grid>
         </ScrollView>

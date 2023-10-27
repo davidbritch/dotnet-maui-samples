@@ -60,7 +60,7 @@
 
 	<!-- Build Properties must be defined within these property groups to ensure successful publishing
        to the Mac App Store. See: https://aka.ms/maui-publish-app-store#define-build-properties-in-your-project-file -->
-	<ItemGroup>
+	<!--<ItemGroup>
 	  <None Remove="Converters\" />
 	  <None Remove="Helpers\" />
 	  <None Remove="Resources\Images\app_info_action_icon.png" />
@@ -78,7 +78,7 @@
 	  <Folder Include="Views\" />
 	  <Folder Include="ViewModels\" />
 	  <Folder Include="Models\" />
-	</ItemGroup>
+	</ItemGroup>-->
 	<ItemGroup>
 	  <BundleResource Include="Resources\Images\app_info_action_icon.png" />
 	  <BundleResource Include="Resources\Images\battery_action_icon.png" />

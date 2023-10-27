@@ -6,20 +6,28 @@
                 x:Class="PlatformIntegrationDemo.Views.FlashlightPage"
                 Title="Flashlight">
     <views:BasePage.BindingContext>
-        <viewmodels:FlashlightViewModel/>
+        <viewmodels:FlashlightViewModel />
     </views:BasePage.BindingContext>
 
     <Grid RowDefinitions="Auto,*">
-        <Label Text="A simple way to turn the flashlight on/off" FontAttributes="Bold" Margin="12" />
+        <Label Text="A simple way to turn the flashlight on/off"
+               FontAttributes="Bold"
+               Margin="12" />
 
         <ScrollView Grid.Row="1">
-            <StackLayout Padding="12,0,12,12" Spacing="6">
-                <Button Text="Toggle Flashlight" Command="{Binding ToggleCommand}" />
-                <Label Text="Flashlight is on." FontAttributes="Italic"
+            <StackLayout Padding="12,0,12,12"
+                         Spacing="6">
+                <Button Text="Toggle Flashlight"
+                        Command="{Binding ToggleCommand}" />
+                <Label Text="Flashlight is on."
+                       FontAttributes="Italic"
                        IsVisible="{Binding IsOn}" />
-                <Label Text="Flashlight is off." FontAttributes="Italic"
+                <Label Text="Flashlight is off."
+                       FontAttributes="Italic"
                        IsVisible="{Binding IsOn, Converter={StaticResource InverterConverter}}" />
-                <Label Text="Flashlight is not supported." TextColor="Red" FontAttributes="Italic"
+                <Label Text="Flashlight is not supported."
+                       TextColor="Red"
+                       FontAttributes="Italic"
                        IsVisible="{Binding IsSupported, Converter={StaticResource InverterConverter}}" />
             </StackLayout>
         </ScrollView>

@@ -10,24 +10,39 @@
     </views:BasePage.BindingContext>
 
     <Grid RowDefinitions="Auto,*">
-        <Label Text="Easily geocode and reverse geocoding." FontAttributes="Bold" Margin="12" />
+        <Label Text="Easily geocode and reverse geocoding."
+               FontAttributes="Bold"
+               Margin="12" />
 
         <ScrollView Grid.Row="1">
-            <StackLayout Padding="12,0,12,12" Spacing="6">
-                <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" />
+            <StackLayout Padding="12,0,12,12"
+                         Spacing="6">
+                <ActivityIndicator IsVisible="{Binding IsBusy}"
+                                   IsRunning="{Binding IsBusy}" />
 
-                <Label Text="Geocoding:" FontAttributes="Bold" Margin="0,6,0,0" />
+                <Label Text="Geocoding:"
+                       FontAttributes="Bold"
+                       Margin="0,6,0,0" />
                 <Label Text="Latitude:" />
-                <Entry Text="{Binding Latitude}" Keyboard="Numeric" />
+                <Entry Text="{Binding Latitude}"
+                       Keyboard="Numeric" />
                 <Label Text="Longitude:" />
-                <Entry Text="{Binding Longitude}" Keyboard="Numeric" />
-                <Button Text="Detect Placemarks" Command="{Binding GetAddressCommand}" IsEnabled="{Binding IsNotBusy}" />
+                <Entry Text="{Binding Longitude}"
+                       Keyboard="Numeric" />
+                <Button Text="Detect Placemarks"
+                        Command="{Binding GetAddressCommand}"
+                        IsEnabled="{Binding IsNotBusy}" />
                 <Label Text="{Binding GeocodeAddress}" />
 
-                <Label Text="Reverse Geocoding:" FontAttributes="Bold" Margin="0,6,0,0" />
+                <Label Text="Reverse Geocoding:"
+                       FontAttributes="Bold"
+                       Margin="0,6,0,0" />
                 <Label Text="Address:" />
-                <Editor Text="{Binding Address}" AutoSize="TextChanges" />
-                <Button Text="Detect Location" Command="{Binding GetPositionCommand}" IsEnabled="{Binding IsNotBusy}" />
+                <Editor Text="{Binding Address}"
+                        AutoSize="TextChanges" />
+                <Button Text="Detect Location"
+                        Command="{Binding GetPositionCommand}"
+                        IsEnabled="{Binding IsNotBusy}" />
                 <Label Text="{Binding GeocodePosition}" />
             </StackLayout>
         </ScrollView>
