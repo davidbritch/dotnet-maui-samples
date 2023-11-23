@@ -37,6 +37,9 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
@@ -52,48 +55,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0-rc.2.23479.6" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.3" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.3" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
 	</ItemGroup>
 
-	<!-- Build Properties must be defined within these property groups to ensure successful publishing
-       to the Mac App Store. See: https://aka.ms/maui-publish-app-store#define-build-properties-in-your-project-file -->
-	<!--<ItemGroup>
-	  <None Remove="Converters\" />
-	  <None Remove="Helpers\" />
-	  <None Remove="Resources\Images\app_info_action_icon.png" />
-	  <None Remove="Resources\Images\battery_action_icon.png" />
-	  <None Remove="Resources\Raw\FileSystemTemplate.txt" />
-	  <None Remove="Platforms\Android\Resources\xml\" />
-	  <None Remove="Views\" />
-	  <None Remove="ViewModels\" />
-	  <None Remove="Models\" />
-	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="Converters\" />
-	  <Folder Include="Helpers\" />
-	  <Folder Include="Platforms\Android\Resources\xml\" />
-	  <Folder Include="Views\" />
-	  <Folder Include="ViewModels\" />
-	  <Folder Include="Models\" />
-	</ItemGroup>-->
 	<ItemGroup>
 	  <BundleResource Include="Resources\Images\app_info_action_icon.png" />
 	  <BundleResource Include="Resources\Images\battery_action_icon.png" />
 	  <BundleResource Include="Resources\Raw\FileSystemTemplate.txt" />
 	</ItemGroup>
-
-  <PropertyGroup Condition="$(TargetFramework.Contains('-maccatalyst')) and '$(Configuration)' == 'Debug'">
-    <CodesignEntitlements>Platforms/MacCatalyst/Entitlements.Debug.plist</CodesignEntitlements>
-	<RuntimeIdentifiers>maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="$(TargetFramework.Contains('-maccatalyst')) and '$(Configuration)' == 'Release'">
-    <CodesignEntitlements>Platforms/MacCatalyst/Entitlements.Release.plist</CodesignEntitlements>
-	<RuntimeIdentifiers>maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers>
-    <UseHardenedRuntime>true</UseHardenedRuntime>
-  </PropertyGroup>
 
 </Project>

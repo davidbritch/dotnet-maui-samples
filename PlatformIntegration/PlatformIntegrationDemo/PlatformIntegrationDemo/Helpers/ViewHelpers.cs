@@ -9,8 +9,6 @@
             var absoluteX = element.X + element.Margin.Top;
             var absoluteY = element.Y + element.Margin.Left;
 
-            // TODO: add logic to handle titles, headers, or other non-view bars
-
             while (looper.Parent != null)
             {
                 looper = looper.Parent;

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="TextSample.LabelPage"
@@ -9,7 +9,7 @@
             <Label TextColor="#77d065" Text="This is a green label." />
             <Label FontSize="30" Text="This label has a font size of 30." />
             <Label FontAttributes="Bold" Text="This is bold text that uses character spacing." CharacterSpacing="5" />
-            <Label TextType="Html" Text="This is &lt;strong style=&quot;color:red&quot;&gt;HTML&lt;/strong&gt; text." />
+            <Label Text="This is &lt;strong style=&quot;color:red&quot;&gt;HTML&lt;/strong&gt; text." TextType="Html" />
             <!--
             Alternatively, embed the HTML string in CDATA:
 
