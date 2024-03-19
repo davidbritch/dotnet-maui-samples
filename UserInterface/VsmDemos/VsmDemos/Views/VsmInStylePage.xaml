@@ -12,14 +12,14 @@
                         Value="18" />
                 <Setter Property="VisualStateManager.VisualStateGroups">
                     <VisualStateGroupList>
-                        <VisualStateGroup x:Name="CommonStates">
-                            <VisualState x:Name="Normal">
+                        <VisualStateGroup Name="CommonStates">
+                            <VisualState Name="Normal">
                                 <VisualState.Setters>
                                     <Setter Property="BackgroundColor"
                                             Value="Lime" />
                                 </VisualState.Setters>
                             </VisualState>
-                            <VisualState x:Name="Focused">
+                            <VisualState Name="Focused">
                                 <VisualState.Setters>
                                     <Setter Property="FontSize"
                                             Value="36" />
@@ -27,7 +27,7 @@
                                             Value="Lime" />
                                 </VisualState.Setters>
                             </VisualState>
-                            <VisualState x:Name="Disabled">
+                            <VisualState Name="Disabled">
                                 <VisualState.Setters>
                                     <Setter Property="BackgroundColor"
                                             Value="Pink" />
