@@ -21,9 +21,9 @@
                Placeholder="Enter answer" />
         <Button Text="Reveal answer">
             <VisualStateManager.VisualStateGroups>
-                <VisualStateGroup x:Name="CommonStates">
-                    <VisualState x:Name="Normal" />
-                    <VisualState x:Name="Pressed">
+                <VisualStateGroup Name="CommonStates">
+                    <VisualState Name="Normal" />
+                    <VisualState Name="Pressed">
                         <VisualState.Setters>
                             <Setter Property="Scale"
                                     Value="0.8" />
