@@ -6,8 +6,13 @@
              Title="Hide Home Indicator"
              ios:Page.PrefersHomeIndicatorAutoHidden="true">
     <StackLayout Margin="20,35,20,20">
-        <Label Text="Tap the button below to toggle the home indicator on iPhone X, XR, and XS models." />
-        <Button Text="Toggle Home Indicator"
-                Clicked="OnButtonClicked" />
+        <Button Text="Navigation page"
+                Clicked="OnNavigationPageClicked" />
+        <Button Text="Tabbed page"
+                Clicked="OnTabbedPageClicked" />
+        <Button Text="Flyout page"
+                Clicked="OnFlyoutPageClicked" />
+        <Button Text="Shell"
+                Clicked="OnShellClicked" />
     </StackLayout>
 </ContentPage>
