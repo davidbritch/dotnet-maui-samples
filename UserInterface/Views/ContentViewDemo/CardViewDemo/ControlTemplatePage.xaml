@@ -4,7 +4,8 @@
              xmlns:controls="clr-namespace:CardViewDemo.Controls"
              x:Class="CardViewDemo.ControlTemplatePage"
              Title="ControlTemplate XAML Demo"
-             Padding="10">
+             Padding="10"
+             x:DataType="controls:CardView">
     <ContentPage.Resources>
         <ResourceDictionary>
             <ControlTemplate x:Key="CardViewCompressed">

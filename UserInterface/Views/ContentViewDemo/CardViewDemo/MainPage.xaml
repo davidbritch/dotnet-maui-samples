@@ -2,7 +2,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 			 xmlns:local="clr-namespace:CardViewDemo"
              x:Class="CardViewDemo.MainPage"
-			 Title="CardView demos">
+			 Title="CardView demos"
+             x:DataType="local:MainPage">
 	<TableView Intent="Menu">
 		<TableRoot>
 			<TableSection>
