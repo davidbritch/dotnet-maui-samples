@@ -1,5 +1,4 @@
-﻿using Microsoft.Maui.Controls.PlatformConfiguration;
-using Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;
+﻿using Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;
 
 namespace PlatformSpecifics
 {
@@ -16,8 +15,8 @@ namespace PlatformSpecifics
                 var nameLabel = new Label();
                 var ageLabel = new Label { HorizontalOptions = LayoutOptions.End };
 
-                nameLabel.SetBinding(Label.TextProperty, "Name");
-                ageLabel.SetBinding(Label.TextProperty, "Age");
+                nameLabel.SetBinding(Label.TextProperty, static (Person p) => p.Name);
+                ageLabel.SetBinding(Label.TextProperty, static (Person p) => p.Age);
 
                 grid.Add(nameLabel);
                 grid.Add(ageLabel, 1, 0);
@@ -26,8 +25,8 @@ namespace PlatformSpecifics
             });
 
             var listView = new Microsoft.Maui.Controls.ListView { IsGroupingEnabled = true, ItemTemplate = personDataTemplate };
-            listView.SetBinding(ItemsView<Cell>.ItemsSourceProperty, "GroupedEmployees");
-            listView.GroupDisplayBinding = new Binding("Key");
+            listView.SetBinding(ItemsView<Cell>.ItemsSourceProperty, static (ListViewViewModel vm) => vm.GroupedEmployees);
+            listView.GroupDisplayBinding = Binding.Create(static (Grouping<char, Person> g) => g.Key);
             listView.On<Microsoft.Maui.Controls.PlatformConfiguration.Android>().SetIsFastScrollEnabled(true);
 
             var button = new Microsoft.Maui.Controls.Button { Text = "Toggle FastScroll" };
