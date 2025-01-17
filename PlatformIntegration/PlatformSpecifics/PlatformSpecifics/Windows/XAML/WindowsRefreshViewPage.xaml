@@ -4,12 +4,14 @@
              xmlns:local="clr-namespace:PlatformSpecifics"
              xmlns:windows="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;assembly=Microsoft.Maui.Controls"
              x:Class="PlatformSpecifics.WindowsRefreshViewPage"
-             Title="RefreshView Pull Direction">
+             Title="RefreshView Pull Direction"
+             x:DataType="local:WindowsRefreshViewPageViewModel">
     <ContentPage.BindingContext>
         <local:WindowsRefreshViewPageViewModel />
     </ContentPage.BindingContext>
     <ContentPage.Resources>
-        <DataTemplate x:Key="ColorItemTemplate">
+        <DataTemplate x:Key="ColorItemTemplate"
+                      x:DataType="local:RefreshItem">
             <Grid Margin="5"
                   HeightRequest="120"
                   WidthRequest="105">
