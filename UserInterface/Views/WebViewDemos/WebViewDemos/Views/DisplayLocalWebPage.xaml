@@ -16,7 +16,7 @@
                     <body>
                     <h1>.NET MAUI</h1>
                     <p>The CSS and image are loaded from local files!</p>
-                    <p><a href="local.html">next page</a></p>
+                    <p><a href="local.html" target="_blank">next page</a></p>
                     </body>
                     </html>                    
                     ]]>
