@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls" 
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             xmlns:local="clr-namespace:PlatformSpecifics"
              x:Class="PlatformSpecifics.iOSListViewWithCellPage"
-             Title="ListView/Cell Platform-Specifics">
+             Title="ListView/Cell Platform-Specifics"
+             x:DataType="local:ListViewViewModel">
     <StackLayout Margin="20">
         <ListView ItemsSource="{Binding GroupedEmployees}"
                   IsGroupingEnabled="true"
@@ -11,7 +13,7 @@
                   ios:ListView.RowAnimationsEnabled="false"
                   ios:ListView.GroupHeaderStyle="Grouped">
             <ListView.GroupHeaderTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="local:Grouping(x:Char,local:Person)">
                     <ViewCell ios:Cell.DefaultBackgroundColor="Teal">
                         <Label Margin="10,10"
                                Text="{Binding Key}"
@@ -20,7 +22,7 @@
                 </DataTemplate>
             </ListView.GroupHeaderTemplate>
             <ListView.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="local:Person">
                     <ViewCell>
                         <Grid>
                             <Grid.ColumnDefinitions>
