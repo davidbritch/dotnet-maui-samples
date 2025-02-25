@@ -34,7 +34,7 @@
                 </scg:List>
             </CollectionView.ItemsSource>
             <CollectionView.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="scg:KeyValuePair(x:String,models:Monkey)">
                     <Grid Padding="10">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
